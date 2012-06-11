@@ -24,13 +24,5 @@
 		<constructor-arg ref="mongoDbFactory" />
 	</bean>
 
-	<beans profile="default">
-		<!-- Put the mongodb.properties file in the classpath -->
-		<context:property-placeholder location="classpath*:mongodb.properties" />
-		<mongo:db-factory id="mongoDbFactory" dbname="${db.name}" host="${db.host}" port="${db.port}" username="${db.username}" password="${db.password}" />
-	</beans>
-
-	<beans profile="cloud">
-		<cloud:mongo-db-factory id="mongoDbFactory" />
-	</beans>
+	<mongo:db-factory id="mongoDbFactory" dbname="test" host="127.0.0.1" port="27017" username="test" password="test" />
 </beans>

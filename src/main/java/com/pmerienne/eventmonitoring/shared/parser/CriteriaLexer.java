@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:46:29 com/pmerienne/event/vizualisation/shared/parser/Criteria.g 2012-06-11 10:10:34
+// $ANTLR 3.3 Nov 30, 2010 12:46:29 com/pmerienne/eventmonitoring/shared/parser/Criteria.g 2012-06-11 15:03:17
 
 package com.pmerienne.eventmonitoring.shared.parser;
 
@@ -46,15 +46,15 @@ public class CriteriaLexer extends Lexer {
         super(input,state);
 
     }
-    public String getGrammarFileName() { return "com/pmerienne/event/vizualisation/shared/parser/Criteria.g"; }
+    public String getGrammarFileName() { return "com/pmerienne/eventmonitoring/shared/parser/Criteria.g"; }
 
     // $ANTLR start "LPAREN"
     public final void mLPAREN() throws RecognitionException {
         try {
             int _type = LPAREN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:45:8: ( '(' )
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:45:10: '('
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:45:8: ( '(' )
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:45:10: '('
             {
             match('('); 
 
@@ -73,8 +73,8 @@ public class CriteriaLexer extends Lexer {
         try {
             int _type = RPAREN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:46:8: ( ')' )
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:46:10: ')'
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:46:8: ( ')' )
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:46:10: ')'
             {
             match(')'); 
 
@@ -93,7 +93,7 @@ public class CriteriaLexer extends Lexer {
         try {
             int _type = AND;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:47:5: ( '&&' | 'and' | 'AND' )
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:47:5: ( '&&' | 'and' | 'AND' )
             int alt1=3;
             switch ( input.LA(1) ) {
             case '&':
@@ -120,7 +120,7 @@ public class CriteriaLexer extends Lexer {
 
             switch (alt1) {
                 case 1 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:47:7: '&&'
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:47:7: '&&'
                     {
                     match("&&"); 
 
@@ -128,7 +128,7 @@ public class CriteriaLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:47:14: 'and'
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:47:14: 'and'
                     {
                     match("and"); 
 
@@ -136,7 +136,7 @@ public class CriteriaLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:47:22: 'AND'
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:47:22: 'AND'
                     {
                     match("AND"); 
 
@@ -158,7 +158,7 @@ public class CriteriaLexer extends Lexer {
         try {
             int _type = OR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:48:4: ( '||' | 'or' | 'OR' )
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:48:4: ( '||' | 'or' | 'OR' )
             int alt2=3;
             switch ( input.LA(1) ) {
             case '|':
@@ -185,7 +185,7 @@ public class CriteriaLexer extends Lexer {
 
             switch (alt2) {
                 case 1 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:48:6: '||'
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:48:6: '||'
                     {
                     match("||"); 
 
@@ -193,7 +193,7 @@ public class CriteriaLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:48:13: 'or'
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:48:13: 'or'
                     {
                     match("or"); 
 
@@ -201,7 +201,7 @@ public class CriteriaLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:48:20: 'OR'
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:48:20: 'OR'
                     {
                     match("OR"); 
 
@@ -223,8 +223,8 @@ public class CriteriaLexer extends Lexer {
         try {
             int _type = LT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:49:4: ( '<' )
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:49:6: '<'
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:49:4: ( '<' )
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:49:6: '<'
             {
             match('<'); 
 
@@ -243,7 +243,7 @@ public class CriteriaLexer extends Lexer {
         try {
             int _type = LTE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:50:5: ( '<=' | '=<' )
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:50:5: ( '<=' | '=<' )
             int alt3=2;
             switch ( input.LA(1) ) {
             case '<':
@@ -265,7 +265,7 @@ public class CriteriaLexer extends Lexer {
 
             switch (alt3) {
                 case 1 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:50:7: '<='
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:50:7: '<='
                     {
                     match("<="); 
 
@@ -273,7 +273,7 @@ public class CriteriaLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:50:14: '=<'
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:50:14: '=<'
                     {
                     match("=<"); 
 
@@ -295,8 +295,8 @@ public class CriteriaLexer extends Lexer {
         try {
             int _type = GT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:51:4: ( '>' )
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:51:6: '>'
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:51:4: ( '>' )
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:51:6: '>'
             {
             match('>'); 
 
@@ -315,7 +315,7 @@ public class CriteriaLexer extends Lexer {
         try {
             int _type = GTE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:52:5: ( '>=' | '=>' )
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:52:5: ( '>=' | '=>' )
             int alt4=2;
             switch ( input.LA(1) ) {
             case '>':
@@ -337,7 +337,7 @@ public class CriteriaLexer extends Lexer {
 
             switch (alt4) {
                 case 1 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:52:7: '>='
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:52:7: '>='
                     {
                     match(">="); 
 
@@ -345,7 +345,7 @@ public class CriteriaLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:52:14: '=>'
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:52:14: '=>'
                     {
                     match("=>"); 
 
@@ -367,8 +367,8 @@ public class CriteriaLexer extends Lexer {
         try {
             int _type = IS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:53:4: ( '==' )
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:53:6: '=='
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:53:4: ( '==' )
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:53:6: '=='
             {
             match("=="); 
 
@@ -388,8 +388,8 @@ public class CriteriaLexer extends Lexer {
         try {
             int _type = NE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:54:4: ( '!=' )
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:54:6: '!='
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:54:4: ( '!=' )
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:54:6: '!='
             {
             match("!="); 
 
@@ -409,7 +409,7 @@ public class CriteriaLexer extends Lexer {
         try {
             int _type = NULL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:55:6: ( 'null' | 'NULL' )
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:55:6: ( 'null' | 'NULL' )
             int alt5=2;
             switch ( input.LA(1) ) {
             case 'n':
@@ -431,7 +431,7 @@ public class CriteriaLexer extends Lexer {
 
             switch (alt5) {
                 case 1 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:55:8: 'null'
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:55:8: 'null'
                     {
                     match("null"); 
 
@@ -439,7 +439,7 @@ public class CriteriaLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:55:17: 'NULL'
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:55:17: 'NULL'
                     {
                     match("NULL"); 
 
@@ -461,8 +461,8 @@ public class CriteriaLexer extends Lexer {
         try {
             int _type = ARITHMETIC_OPERATOR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:57:21: ( '+' | '-' | '/' | '*' )
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:57:21: ( '+' | '-' | '/' | '*' )
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:
             {
             if ( (input.LA(1)>='*' && input.LA(1)<='+')||input.LA(1)=='-'||input.LA(1)=='/' ) {
                 input.consume();
@@ -489,14 +489,14 @@ public class CriteriaLexer extends Lexer {
         try {
             int _type = NUMBER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:58:8: ( ( '0' .. '9' )+ | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ '.' ( '0' .. '9' )+ )
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:58:8: ( ( '0' .. '9' )+ | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ '.' ( '0' .. '9' )+ )
             int alt10=3;
             alt10 = dfa10.predict(input);
             switch (alt10) {
                 case 1 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:58:10: ( '0' .. '9' )+
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:58:10: ( '0' .. '9' )+
                     {
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:58:10: ( '0' .. '9' )+
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:58:10: ( '0' .. '9' )+
                     int cnt6=0;
                     loop6:
                     do {
@@ -521,7 +521,7 @@ public class CriteriaLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:58:11: '0' .. '9'
+                    	    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:58:11: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -541,10 +541,10 @@ public class CriteriaLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:58:25: '.' ( '0' .. '9' )+
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:58:25: '.' ( '0' .. '9' )+
                     {
                     match('.'); 
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:58:29: ( '0' .. '9' )+
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:58:29: ( '0' .. '9' )+
                     int cnt7=0;
                     loop7:
                     do {
@@ -569,7 +569,7 @@ public class CriteriaLexer extends Lexer {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:58:30: '0' .. '9'
+                    	    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:58:30: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -589,9 +589,9 @@ public class CriteriaLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:58:43: ( '0' .. '9' )+ '.' ( '0' .. '9' )+
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:58:43: ( '0' .. '9' )+ '.' ( '0' .. '9' )+
                     {
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:58:43: ( '0' .. '9' )+
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:58:43: ( '0' .. '9' )+
                     int cnt8=0;
                     loop8:
                     do {
@@ -616,7 +616,7 @@ public class CriteriaLexer extends Lexer {
 
                         switch (alt8) {
                     	case 1 :
-                    	    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:58:44: '0' .. '9'
+                    	    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:58:44: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -633,7 +633,7 @@ public class CriteriaLexer extends Lexer {
                     } while (true);
 
                     match('.'); 
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:58:59: ( '0' .. '9' )+
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:58:59: ( '0' .. '9' )+
                     int cnt9=0;
                     loop9:
                     do {
@@ -658,7 +658,7 @@ public class CriteriaLexer extends Lexer {
 
                         switch (alt9) {
                     	case 1 :
-                    	    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:58:60: '0' .. '9'
+                    	    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:58:60: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -692,7 +692,7 @@ public class CriteriaLexer extends Lexer {
         try {
             int _type = FIELD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:59:7: ( 'id' | 'type' | 'date' | 'data.' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '.' )+ )
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:59:7: ( 'id' | 'type' | 'date' | 'data.' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '.' )+ )
             int alt12=4;
             switch ( input.LA(1) ) {
             case 'i':
@@ -760,7 +760,7 @@ public class CriteriaLexer extends Lexer {
 
             switch (alt12) {
                 case 1 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:59:9: 'id'
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:59:9: 'id'
                     {
                     match("id"); 
 
@@ -768,7 +768,7 @@ public class CriteriaLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:59:16: 'type'
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:59:16: 'type'
                     {
                     match("type"); 
 
@@ -776,7 +776,7 @@ public class CriteriaLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:59:25: 'date'
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:59:25: 'date'
                     {
                     match("date"); 
 
@@ -784,11 +784,11 @@ public class CriteriaLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:59:34: 'data.' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '.' )+
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:59:34: 'data.' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '.' )+
                     {
                     match("data."); 
 
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:59:42: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '.' )+
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:59:42: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '.' )+
                     int cnt11=0;
                     loop11:
                     do {
@@ -866,7 +866,7 @@ public class CriteriaLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:
+                    	    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:
                     	    {
                     	    if ( input.LA(1)=='.'||(input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                     	        input.consume();
@@ -908,10 +908,10 @@ public class CriteriaLexer extends Lexer {
         try {
             int _type = STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:60:8: ( ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '.' | '/' | ':' | '#' | '&' | '?' )+ )
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:60:10: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '.' | '/' | ':' | '#' | '&' | '?' )+
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:60:8: ( ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '.' | '/' | ':' | '#' | '&' | '?' )+ )
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:60:10: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '.' | '/' | ':' | '#' | '&' | '?' )+
             {
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:60:10: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '.' | '/' | ':' | '#' | '&' | '?' )+
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:60:10: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '.' | '/' | ':' | '#' | '&' | '?' )+
             int cnt13=0;
             loop13:
             do {
@@ -994,7 +994,7 @@ public class CriteriaLexer extends Lexer {
 
                 switch (alt13) {
             	case 1 :
-            	    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:
+            	    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:
             	    {
             	    if ( input.LA(1)=='#'||input.LA(1)=='&'||(input.LA(1)>='.' && input.LA(1)<=':')||input.LA(1)=='?'||(input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
             	        input.consume();
@@ -1034,10 +1034,10 @@ public class CriteriaLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:61:4: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:61:6: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:61:4: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:61:6: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:61:6: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:61:6: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt14=0;
             loop14:
             do {
@@ -1056,7 +1056,7 @@ public class CriteriaLexer extends Lexer {
 
                 switch (alt14) {
             	case 1 :
-            	    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:
+            	    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:
             	    {
             	    if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
             	        input.consume();
@@ -1093,117 +1093,117 @@ public class CriteriaLexer extends Lexer {
     // $ANTLR end "WS"
 
     public void mTokens() throws RecognitionException {
-        // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:1:8: ( LPAREN | RPAREN | AND | OR | LT | LTE | GT | GTE | IS | NE | NULL | ARITHMETIC_OPERATOR | NUMBER | FIELD | STRING | WS )
+        // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:1:8: ( LPAREN | RPAREN | AND | OR | LT | LTE | GT | GTE | IS | NE | NULL | ARITHMETIC_OPERATOR | NUMBER | FIELD | STRING | WS )
         int alt15=16;
         alt15 = dfa15.predict(input);
         switch (alt15) {
             case 1 :
-                // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:1:10: LPAREN
+                // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:1:10: LPAREN
                 {
                 mLPAREN(); 
 
                 }
                 break;
             case 2 :
-                // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:1:17: RPAREN
+                // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:1:17: RPAREN
                 {
                 mRPAREN(); 
 
                 }
                 break;
             case 3 :
-                // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:1:24: AND
+                // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:1:24: AND
                 {
                 mAND(); 
 
                 }
                 break;
             case 4 :
-                // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:1:28: OR
+                // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:1:28: OR
                 {
                 mOR(); 
 
                 }
                 break;
             case 5 :
-                // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:1:31: LT
+                // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:1:31: LT
                 {
                 mLT(); 
 
                 }
                 break;
             case 6 :
-                // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:1:34: LTE
+                // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:1:34: LTE
                 {
                 mLTE(); 
 
                 }
                 break;
             case 7 :
-                // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:1:38: GT
+                // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:1:38: GT
                 {
                 mGT(); 
 
                 }
                 break;
             case 8 :
-                // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:1:41: GTE
+                // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:1:41: GTE
                 {
                 mGTE(); 
 
                 }
                 break;
             case 9 :
-                // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:1:45: IS
+                // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:1:45: IS
                 {
                 mIS(); 
 
                 }
                 break;
             case 10 :
-                // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:1:48: NE
+                // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:1:48: NE
                 {
                 mNE(); 
 
                 }
                 break;
             case 11 :
-                // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:1:51: NULL
+                // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:1:51: NULL
                 {
                 mNULL(); 
 
                 }
                 break;
             case 12 :
-                // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:1:56: ARITHMETIC_OPERATOR
+                // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:1:56: ARITHMETIC_OPERATOR
                 {
                 mARITHMETIC_OPERATOR(); 
 
                 }
                 break;
             case 13 :
-                // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:1:76: NUMBER
+                // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:1:76: NUMBER
                 {
                 mNUMBER(); 
 
                 }
                 break;
             case 14 :
-                // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:1:83: FIELD
+                // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:1:83: FIELD
                 {
                 mFIELD(); 
 
                 }
                 break;
             case 15 :
-                // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:1:89: STRING
+                // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:1:89: STRING
                 {
                 mSTRING(); 
 
                 }
                 break;
             case 16 :
-                // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:1:96: WS
+                // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:1:96: WS
                 {
                 mWS(); 
 

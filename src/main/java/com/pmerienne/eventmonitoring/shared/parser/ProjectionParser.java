@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:46:29 com/pmerienne/event/vizualisation/shared/parser/Projection.g 2012-06-11 11:55:23
+// $ANTLR 3.3 Nov 30, 2010 12:46:29 com/pmerienne/eventmonitoring/shared/parser/Projection.g 2012-06-11 15:03:18
 
 package com.pmerienne.eventmonitoring.shared.parser;
 
@@ -57,7 +57,7 @@ public class ProjectionParser extends Parser {
     }
 
     public String[] getTokenNames() { return ProjectionParser.tokenNames; }
-    public String getGrammarFileName() { return "com/pmerienne/event/vizualisation/shared/parser/Projection.g"; }
+    public String getGrammarFileName() { return "com/pmerienne/eventmonitoring/shared/parser/Projection.g"; }
 
 
       //override method
@@ -73,7 +73,7 @@ public class ProjectionParser extends Parser {
     };
 
     // $ANTLR start "expression"
-    // com/pmerienne/event/vizualisation/shared/parser/Projection.g:72:1: expression : arithmeticfunctionexpression ;
+    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:72:1: expression : arithmeticfunctionexpression ;
     public final ProjectionParser.expression_return expression() throws RecognitionException {
         ProjectionParser.expression_return retval = new ProjectionParser.expression_return();
         retval.start = input.LT(1);
@@ -85,8 +85,8 @@ public class ProjectionParser extends Parser {
 
 
         try {
-            // com/pmerienne/event/vizualisation/shared/parser/Projection.g:72:12: ( arithmeticfunctionexpression )
-            // com/pmerienne/event/vizualisation/shared/parser/Projection.g:72:14: arithmeticfunctionexpression
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:72:12: ( arithmeticfunctionexpression )
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:72:14: arithmeticfunctionexpression
             {
             root_0 = (Object)adaptor.nil();
 
@@ -123,7 +123,7 @@ public class ProjectionParser extends Parser {
     };
 
     // $ANTLR start "arithmeticfunctionexpression"
-    // com/pmerienne/event/vizualisation/shared/parser/Projection.g:74:1: arithmeticfunctionexpression : functionexpression ( ARITHMETIC_OPERATOR functionexpression )* ;
+    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:74:1: arithmeticfunctionexpression : functionexpression ( ARITHMETIC_OPERATOR functionexpression )* ;
     public final ProjectionParser.arithmeticfunctionexpression_return arithmeticfunctionexpression() throws RecognitionException {
         ProjectionParser.arithmeticfunctionexpression_return retval = new ProjectionParser.arithmeticfunctionexpression_return();
         retval.start = input.LT(1);
@@ -139,8 +139,8 @@ public class ProjectionParser extends Parser {
         Object ARITHMETIC_OPERATOR3_tree=null;
 
         try {
-            // com/pmerienne/event/vizualisation/shared/parser/Projection.g:74:30: ( functionexpression ( ARITHMETIC_OPERATOR functionexpression )* )
-            // com/pmerienne/event/vizualisation/shared/parser/Projection.g:74:32: functionexpression ( ARITHMETIC_OPERATOR functionexpression )*
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:74:30: ( functionexpression ( ARITHMETIC_OPERATOR functionexpression )* )
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:74:32: functionexpression ( ARITHMETIC_OPERATOR functionexpression )*
             {
             root_0 = (Object)adaptor.nil();
 
@@ -150,7 +150,7 @@ public class ProjectionParser extends Parser {
             state._fsp--;
 
             adaptor.addChild(root_0, functionexpression2.getTree());
-            // com/pmerienne/event/vizualisation/shared/parser/Projection.g:74:51: ( ARITHMETIC_OPERATOR functionexpression )*
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:74:51: ( ARITHMETIC_OPERATOR functionexpression )*
             loop1:
             do {
                 int alt1=2;
@@ -165,7 +165,7 @@ public class ProjectionParser extends Parser {
 
                 switch (alt1) {
             	case 1 :
-            	    // com/pmerienne/event/vizualisation/shared/parser/Projection.g:74:52: ARITHMETIC_OPERATOR functionexpression
+            	    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:74:52: ARITHMETIC_OPERATOR functionexpression
             	    {
             	    ARITHMETIC_OPERATOR3=(Token)match(input,ARITHMETIC_OPERATOR,FOLLOW_ARITHMETIC_OPERATOR_in_arithmeticfunctionexpression414); 
             	    ARITHMETIC_OPERATOR3_tree = (Object)adaptor.create(ARITHMETIC_OPERATOR3);
@@ -213,7 +213,7 @@ public class ProjectionParser extends Parser {
     };
 
     // $ANTLR start "functionexpression"
-    // com/pmerienne/event/vizualisation/shared/parser/Projection.g:76:1: functionexpression : ( COUNT_FUNCTION LPAREN andexpression RPAREN | SUM_FUNCTION LPAREN sumarithmeticexpression RPAREN );
+    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:76:1: functionexpression : ( COUNT_FUNCTION LPAREN andexpression RPAREN | SUM_FUNCTION LPAREN sumarithmeticexpression RPAREN );
     public final ProjectionParser.functionexpression_return functionexpression() throws RecognitionException {
         ProjectionParser.functionexpression_return retval = new ProjectionParser.functionexpression_return();
         retval.start = input.LT(1);
@@ -239,7 +239,7 @@ public class ProjectionParser extends Parser {
         Object RPAREN12_tree=null;
 
         try {
-            // com/pmerienne/event/vizualisation/shared/parser/Projection.g:76:20: ( COUNT_FUNCTION LPAREN andexpression RPAREN | SUM_FUNCTION LPAREN sumarithmeticexpression RPAREN )
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:76:20: ( COUNT_FUNCTION LPAREN andexpression RPAREN | SUM_FUNCTION LPAREN sumarithmeticexpression RPAREN )
             int alt2=2;
             switch ( input.LA(1) ) {
             case COUNT_FUNCTION:
@@ -261,7 +261,7 @@ public class ProjectionParser extends Parser {
 
             switch (alt2) {
                 case 1 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Projection.g:76:22: COUNT_FUNCTION LPAREN andexpression RPAREN
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:76:22: COUNT_FUNCTION LPAREN andexpression RPAREN
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -281,7 +281,7 @@ public class ProjectionParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Projection.g:76:70: SUM_FUNCTION LPAREN sumarithmeticexpression RPAREN
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:76:70: SUM_FUNCTION LPAREN sumarithmeticexpression RPAREN
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -326,7 +326,7 @@ public class ProjectionParser extends Parser {
     };
 
     // $ANTLR start "andexpression"
-    // com/pmerienne/event/vizualisation/shared/parser/Projection.g:78:1: andexpression : orexpression ( AND orexpression )* ;
+    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:78:1: andexpression : orexpression ( AND orexpression )* ;
     public final ProjectionParser.andexpression_return andexpression() throws RecognitionException {
         ProjectionParser.andexpression_return retval = new ProjectionParser.andexpression_return();
         retval.start = input.LT(1);
@@ -342,8 +342,8 @@ public class ProjectionParser extends Parser {
         Object AND14_tree=null;
 
         try {
-            // com/pmerienne/event/vizualisation/shared/parser/Projection.g:78:15: ( orexpression ( AND orexpression )* )
-            // com/pmerienne/event/vizualisation/shared/parser/Projection.g:78:17: orexpression ( AND orexpression )*
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:78:15: ( orexpression ( AND orexpression )* )
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:78:17: orexpression ( AND orexpression )*
             {
             root_0 = (Object)adaptor.nil();
 
@@ -353,7 +353,7 @@ public class ProjectionParser extends Parser {
             state._fsp--;
 
             adaptor.addChild(root_0, orexpression13.getTree());
-            // com/pmerienne/event/vizualisation/shared/parser/Projection.g:78:30: ( AND orexpression )*
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:78:30: ( AND orexpression )*
             loop3:
             do {
                 int alt3=2;
@@ -368,7 +368,7 @@ public class ProjectionParser extends Parser {
 
                 switch (alt3) {
             	case 1 :
-            	    // com/pmerienne/event/vizualisation/shared/parser/Projection.g:78:31: AND orexpression
+            	    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:78:31: AND orexpression
             	    {
             	    AND14=(Token)match(input,AND,FOLLOW_AND_in_andexpression460); 
             	    AND14_tree = (Object)adaptor.create(AND14);
@@ -416,7 +416,7 @@ public class ProjectionParser extends Parser {
     };
 
     // $ANTLR start "orexpression"
-    // com/pmerienne/event/vizualisation/shared/parser/Projection.g:80:1: orexpression : logicalexpression ( OR logicalexpression )* ;
+    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:80:1: orexpression : logicalexpression ( OR logicalexpression )* ;
     public final ProjectionParser.orexpression_return orexpression() throws RecognitionException {
         ProjectionParser.orexpression_return retval = new ProjectionParser.orexpression_return();
         retval.start = input.LT(1);
@@ -432,8 +432,8 @@ public class ProjectionParser extends Parser {
         Object OR17_tree=null;
 
         try {
-            // com/pmerienne/event/vizualisation/shared/parser/Projection.g:80:14: ( logicalexpression ( OR logicalexpression )* )
-            // com/pmerienne/event/vizualisation/shared/parser/Projection.g:80:16: logicalexpression ( OR logicalexpression )*
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:80:14: ( logicalexpression ( OR logicalexpression )* )
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:80:16: logicalexpression ( OR logicalexpression )*
             {
             root_0 = (Object)adaptor.nil();
 
@@ -443,7 +443,7 @@ public class ProjectionParser extends Parser {
             state._fsp--;
 
             adaptor.addChild(root_0, logicalexpression16.getTree());
-            // com/pmerienne/event/vizualisation/shared/parser/Projection.g:80:34: ( OR logicalexpression )*
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:80:34: ( OR logicalexpression )*
             loop4:
             do {
                 int alt4=2;
@@ -458,7 +458,7 @@ public class ProjectionParser extends Parser {
 
                 switch (alt4) {
             	case 1 :
-            	    // com/pmerienne/event/vizualisation/shared/parser/Projection.g:80:35: OR logicalexpression
+            	    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:80:35: OR logicalexpression
             	    {
             	    OR17=(Token)match(input,OR,FOLLOW_OR_in_orexpression476); 
             	    OR17_tree = (Object)adaptor.create(OR17);
@@ -506,7 +506,7 @@ public class ProjectionParser extends Parser {
     };
 
     // $ANTLR start "logicalexpression"
-    // com/pmerienne/event/vizualisation/shared/parser/Projection.g:82:1: logicalexpression : countarithmeticexpression ( ( LT | LTE | GT | GTE | IS | NE ) countarithmeticexpression )* ;
+    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:82:1: logicalexpression : countarithmeticexpression ( ( LT | LTE | GT | GTE | IS | NE ) countarithmeticexpression )* ;
     public final ProjectionParser.logicalexpression_return logicalexpression() throws RecognitionException {
         ProjectionParser.logicalexpression_return retval = new ProjectionParser.logicalexpression_return();
         retval.start = input.LT(1);
@@ -522,8 +522,8 @@ public class ProjectionParser extends Parser {
         Object set20_tree=null;
 
         try {
-            // com/pmerienne/event/vizualisation/shared/parser/Projection.g:82:19: ( countarithmeticexpression ( ( LT | LTE | GT | GTE | IS | NE ) countarithmeticexpression )* )
-            // com/pmerienne/event/vizualisation/shared/parser/Projection.g:82:21: countarithmeticexpression ( ( LT | LTE | GT | GTE | IS | NE ) countarithmeticexpression )*
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:82:19: ( countarithmeticexpression ( ( LT | LTE | GT | GTE | IS | NE ) countarithmeticexpression )* )
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:82:21: countarithmeticexpression ( ( LT | LTE | GT | GTE | IS | NE ) countarithmeticexpression )*
             {
             root_0 = (Object)adaptor.nil();
 
@@ -533,7 +533,7 @@ public class ProjectionParser extends Parser {
             state._fsp--;
 
             adaptor.addChild(root_0, countarithmeticexpression19.getTree());
-            // com/pmerienne/event/vizualisation/shared/parser/Projection.g:82:47: ( ( LT | LTE | GT | GTE | IS | NE ) countarithmeticexpression )*
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:82:47: ( ( LT | LTE | GT | GTE | IS | NE ) countarithmeticexpression )*
             loop5:
             do {
                 int alt5=2;
@@ -553,7 +553,7 @@ public class ProjectionParser extends Parser {
 
                 switch (alt5) {
             	case 1 :
-            	    // com/pmerienne/event/vizualisation/shared/parser/Projection.g:82:48: ( LT | LTE | GT | GTE | IS | NE ) countarithmeticexpression
+            	    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:82:48: ( LT | LTE | GT | GTE | IS | NE ) countarithmeticexpression
             	    {
             	    set20=(Token)input.LT(1);
             	    set20=(Token)input.LT(1);
@@ -609,7 +609,7 @@ public class ProjectionParser extends Parser {
     };
 
     // $ANTLR start "countarithmeticexpression"
-    // com/pmerienne/event/vizualisation/shared/parser/Projection.g:84:1: countarithmeticexpression : countatom ( ARITHMETIC_OPERATOR countatom )* ;
+    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:84:1: countarithmeticexpression : countatom ( ARITHMETIC_OPERATOR countatom )* ;
     public final ProjectionParser.countarithmeticexpression_return countarithmeticexpression() throws RecognitionException {
         ProjectionParser.countarithmeticexpression_return retval = new ProjectionParser.countarithmeticexpression_return();
         retval.start = input.LT(1);
@@ -625,8 +625,8 @@ public class ProjectionParser extends Parser {
         Object ARITHMETIC_OPERATOR23_tree=null;
 
         try {
-            // com/pmerienne/event/vizualisation/shared/parser/Projection.g:84:27: ( countatom ( ARITHMETIC_OPERATOR countatom )* )
-            // com/pmerienne/event/vizualisation/shared/parser/Projection.g:84:29: countatom ( ARITHMETIC_OPERATOR countatom )*
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:84:27: ( countatom ( ARITHMETIC_OPERATOR countatom )* )
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:84:29: countatom ( ARITHMETIC_OPERATOR countatom )*
             {
             root_0 = (Object)adaptor.nil();
 
@@ -636,7 +636,7 @@ public class ProjectionParser extends Parser {
             state._fsp--;
 
             adaptor.addChild(root_0, countatom22.getTree());
-            // com/pmerienne/event/vizualisation/shared/parser/Projection.g:84:39: ( ARITHMETIC_OPERATOR countatom )*
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:84:39: ( ARITHMETIC_OPERATOR countatom )*
             loop6:
             do {
                 int alt6=2;
@@ -651,7 +651,7 @@ public class ProjectionParser extends Parser {
 
                 switch (alt6) {
             	case 1 :
-            	    // com/pmerienne/event/vizualisation/shared/parser/Projection.g:84:40: ARITHMETIC_OPERATOR countatom
+            	    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:84:40: ARITHMETIC_OPERATOR countatom
             	    {
             	    ARITHMETIC_OPERATOR23=(Token)match(input,ARITHMETIC_OPERATOR,FOLLOW_ARITHMETIC_OPERATOR_in_countarithmeticexpression530); 
             	    ARITHMETIC_OPERATOR23_tree = (Object)adaptor.create(ARITHMETIC_OPERATOR23);
@@ -699,7 +699,7 @@ public class ProjectionParser extends Parser {
     };
 
     // $ANTLR start "sumarithmeticexpression"
-    // com/pmerienne/event/vizualisation/shared/parser/Projection.g:86:1: sumarithmeticexpression : sumatom ( ARITHMETIC_OPERATOR sumatom )* ;
+    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:86:1: sumarithmeticexpression : sumatom ( ARITHMETIC_OPERATOR sumatom )* ;
     public final ProjectionParser.sumarithmeticexpression_return sumarithmeticexpression() throws RecognitionException {
         ProjectionParser.sumarithmeticexpression_return retval = new ProjectionParser.sumarithmeticexpression_return();
         retval.start = input.LT(1);
@@ -715,8 +715,8 @@ public class ProjectionParser extends Parser {
         Object ARITHMETIC_OPERATOR26_tree=null;
 
         try {
-            // com/pmerienne/event/vizualisation/shared/parser/Projection.g:86:25: ( sumatom ( ARITHMETIC_OPERATOR sumatom )* )
-            // com/pmerienne/event/vizualisation/shared/parser/Projection.g:86:27: sumatom ( ARITHMETIC_OPERATOR sumatom )*
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:86:25: ( sumatom ( ARITHMETIC_OPERATOR sumatom )* )
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:86:27: sumatom ( ARITHMETIC_OPERATOR sumatom )*
             {
             root_0 = (Object)adaptor.nil();
 
@@ -726,7 +726,7 @@ public class ProjectionParser extends Parser {
             state._fsp--;
 
             adaptor.addChild(root_0, sumatom25.getTree());
-            // com/pmerienne/event/vizualisation/shared/parser/Projection.g:86:35: ( ARITHMETIC_OPERATOR sumatom )*
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:86:35: ( ARITHMETIC_OPERATOR sumatom )*
             loop7:
             do {
                 int alt7=2;
@@ -741,7 +741,7 @@ public class ProjectionParser extends Parser {
 
                 switch (alt7) {
             	case 1 :
-            	    // com/pmerienne/event/vizualisation/shared/parser/Projection.g:86:36: ARITHMETIC_OPERATOR sumatom
+            	    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:86:36: ARITHMETIC_OPERATOR sumatom
             	    {
             	    ARITHMETIC_OPERATOR26=(Token)match(input,ARITHMETIC_OPERATOR,FOLLOW_ARITHMETIC_OPERATOR_in_sumarithmeticexpression546); 
             	    ARITHMETIC_OPERATOR26_tree = (Object)adaptor.create(ARITHMETIC_OPERATOR26);
@@ -789,7 +789,7 @@ public class ProjectionParser extends Parser {
     };
 
     // $ANTLR start "countatom"
-    // com/pmerienne/event/vizualisation/shared/parser/Projection.g:88:1: countatom : ( NULL | NUMBER | STRING | FIELD | LPAREN andexpression RPAREN );
+    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:88:1: countatom : ( NULL | NUMBER | STRING | FIELD | LPAREN andexpression RPAREN );
     public final ProjectionParser.countatom_return countatom() throws RecognitionException {
         ProjectionParser.countatom_return retval = new ProjectionParser.countatom_return();
         retval.start = input.LT(1);
@@ -813,7 +813,7 @@ public class ProjectionParser extends Parser {
         Object RPAREN34_tree=null;
 
         try {
-            // com/pmerienne/event/vizualisation/shared/parser/Projection.g:88:11: ( NULL | NUMBER | STRING | FIELD | LPAREN andexpression RPAREN )
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:88:11: ( NULL | NUMBER | STRING | FIELD | LPAREN andexpression RPAREN )
             int alt8=5;
             switch ( input.LA(1) ) {
             case NULL:
@@ -850,7 +850,7 @@ public class ProjectionParser extends Parser {
 
             switch (alt8) {
                 case 1 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Projection.g:88:13: NULL
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:88:13: NULL
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -862,7 +862,7 @@ public class ProjectionParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Projection.g:88:19: NUMBER
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:88:19: NUMBER
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -874,7 +874,7 @@ public class ProjectionParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Projection.g:88:28: STRING
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:88:28: STRING
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -886,7 +886,7 @@ public class ProjectionParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Projection.g:88:37: FIELD
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:88:37: FIELD
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -898,7 +898,7 @@ public class ProjectionParser extends Parser {
                     }
                     break;
                 case 5 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Projection.g:88:45: LPAREN andexpression RPAREN
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:88:45: LPAREN andexpression RPAREN
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -939,7 +939,7 @@ public class ProjectionParser extends Parser {
     };
 
     // $ANTLR start "sumatom"
-    // com/pmerienne/event/vizualisation/shared/parser/Projection.g:90:1: sumatom : ( NUMBER | STRING | FIELD | LPAREN sumarithmeticexpression RPAREN );
+    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:90:1: sumatom : ( NUMBER | STRING | FIELD | LPAREN sumarithmeticexpression RPAREN );
     public final ProjectionParser.sumatom_return sumatom() throws RecognitionException {
         ProjectionParser.sumatom_return retval = new ProjectionParser.sumatom_return();
         retval.start = input.LT(1);
@@ -961,7 +961,7 @@ public class ProjectionParser extends Parser {
         Object RPAREN40_tree=null;
 
         try {
-            // com/pmerienne/event/vizualisation/shared/parser/Projection.g:90:9: ( NUMBER | STRING | FIELD | LPAREN sumarithmeticexpression RPAREN )
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:90:9: ( NUMBER | STRING | FIELD | LPAREN sumarithmeticexpression RPAREN )
             int alt9=4;
             switch ( input.LA(1) ) {
             case NUMBER:
@@ -993,7 +993,7 @@ public class ProjectionParser extends Parser {
 
             switch (alt9) {
                 case 1 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Projection.g:90:11: NUMBER
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:90:11: NUMBER
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1005,7 +1005,7 @@ public class ProjectionParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Projection.g:90:20: STRING
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:90:20: STRING
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1017,7 +1017,7 @@ public class ProjectionParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Projection.g:90:29: FIELD
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:90:29: FIELD
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1029,7 +1029,7 @@ public class ProjectionParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Projection.g:90:37: LPAREN sumarithmeticexpression RPAREN
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:90:37: LPAREN sumarithmeticexpression RPAREN
                     {
                     root_0 = (Object)adaptor.nil();
 

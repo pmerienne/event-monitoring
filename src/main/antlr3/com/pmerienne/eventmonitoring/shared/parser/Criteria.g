@@ -11,13 +11,13 @@ options
 //as the generated lexer will reside in org.meri.antlr_step_by_step.parsers 
 //package, we have to add package declaration on top of it
 @lexer::header {
-package com.pmerienne.event.vizualisation.shared.parser;
+package com.pmerienne.eventmonitoring.shared.parser;
 }
 
 //as the generated parser will reside in org.meri.antlr_step_by_step.parsers 
 //package, we have to add package declaration on top of it
 @parser::header {
-package com.pmerienne.event.vizualisation.shared.parser;
+package com.pmerienne.eventmonitoring.shared.parser;
 }
 
 //override some methods and add new members to generated lexer

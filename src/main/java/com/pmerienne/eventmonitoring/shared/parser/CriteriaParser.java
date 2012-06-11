@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:46:29 com/pmerienne/event/vizualisation/shared/parser/Criteria.g 2012-06-11 10:10:34
+// $ANTLR 3.3 Nov 30, 2010 12:46:29 com/pmerienne/eventmonitoring/shared/parser/Criteria.g 2012-06-11 15:03:17
 
 package com.pmerienne.eventmonitoring.shared.parser;
 
@@ -55,7 +55,7 @@ public class CriteriaParser extends Parser {
     }
 
     public String[] getTokenNames() { return CriteriaParser.tokenNames; }
-    public String getGrammarFileName() { return "com/pmerienne/event/vizualisation/shared/parser/Criteria.g"; }
+    public String getGrammarFileName() { return "com/pmerienne/eventmonitoring/shared/parser/Criteria.g"; }
 
 
       //override method
@@ -71,7 +71,7 @@ public class CriteriaParser extends Parser {
     };
 
     // $ANTLR start "expression"
-    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:69:1: expression : andexpression ;
+    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:69:1: expression : andexpression ;
     public final CriteriaParser.expression_return expression() throws RecognitionException {
         CriteriaParser.expression_return retval = new CriteriaParser.expression_return();
         retval.start = input.LT(1);
@@ -83,8 +83,8 @@ public class CriteriaParser extends Parser {
 
 
         try {
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:69:12: ( andexpression )
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:69:14: andexpression
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:69:12: ( andexpression )
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:69:14: andexpression
             {
             root_0 = (Object)adaptor.nil();
 
@@ -121,7 +121,7 @@ public class CriteriaParser extends Parser {
     };
 
     // $ANTLR start "andexpression"
-    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:72:1: andexpression : orexpression ( AND orexpression )* ;
+    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:72:1: andexpression : orexpression ( AND orexpression )* ;
     public final CriteriaParser.andexpression_return andexpression() throws RecognitionException {
         CriteriaParser.andexpression_return retval = new CriteriaParser.andexpression_return();
         retval.start = input.LT(1);
@@ -137,8 +137,8 @@ public class CriteriaParser extends Parser {
         Object AND3_tree=null;
 
         try {
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:72:15: ( orexpression ( AND orexpression )* )
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:72:17: orexpression ( AND orexpression )*
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:72:15: ( orexpression ( AND orexpression )* )
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:72:17: orexpression ( AND orexpression )*
             {
             root_0 = (Object)adaptor.nil();
 
@@ -148,7 +148,7 @@ public class CriteriaParser extends Parser {
             state._fsp--;
 
             adaptor.addChild(root_0, orexpression2.getTree());
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:72:30: ( AND orexpression )*
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:72:30: ( AND orexpression )*
             loop1:
             do {
                 int alt1=2;
@@ -163,7 +163,7 @@ public class CriteriaParser extends Parser {
 
                 switch (alt1) {
             	case 1 :
-            	    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:72:31: AND orexpression
+            	    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:72:31: AND orexpression
             	    {
             	    AND3=(Token)match(input,AND,FOLLOW_AND_in_andexpression392); 
             	    AND3_tree = (Object)adaptor.create(AND3);
@@ -211,7 +211,7 @@ public class CriteriaParser extends Parser {
     };
 
     // $ANTLR start "orexpression"
-    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:75:1: orexpression : logicalexpression ( OR logicalexpression )* ;
+    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:75:1: orexpression : logicalexpression ( OR logicalexpression )* ;
     public final CriteriaParser.orexpression_return orexpression() throws RecognitionException {
         CriteriaParser.orexpression_return retval = new CriteriaParser.orexpression_return();
         retval.start = input.LT(1);
@@ -227,8 +227,8 @@ public class CriteriaParser extends Parser {
         Object OR6_tree=null;
 
         try {
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:75:14: ( logicalexpression ( OR logicalexpression )* )
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:75:16: logicalexpression ( OR logicalexpression )*
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:75:14: ( logicalexpression ( OR logicalexpression )* )
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:75:16: logicalexpression ( OR logicalexpression )*
             {
             root_0 = (Object)adaptor.nil();
 
@@ -238,7 +238,7 @@ public class CriteriaParser extends Parser {
             state._fsp--;
 
             adaptor.addChild(root_0, logicalexpression5.getTree());
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:75:34: ( OR logicalexpression )*
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:75:34: ( OR logicalexpression )*
             loop2:
             do {
                 int alt2=2;
@@ -253,7 +253,7 @@ public class CriteriaParser extends Parser {
 
                 switch (alt2) {
             	case 1 :
-            	    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:75:35: OR logicalexpression
+            	    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:75:35: OR logicalexpression
             	    {
             	    OR6=(Token)match(input,OR,FOLLOW_OR_in_orexpression409); 
             	    OR6_tree = (Object)adaptor.create(OR6);
@@ -301,7 +301,7 @@ public class CriteriaParser extends Parser {
     };
 
     // $ANTLR start "logicalexpression"
-    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:77:1: logicalexpression : arithmeticexpression ( ( LT | LTE | GT | GTE | IS | NE ) arithmeticexpression )* ;
+    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:77:1: logicalexpression : arithmeticexpression ( ( LT | LTE | GT | GTE | IS | NE ) arithmeticexpression )* ;
     public final CriteriaParser.logicalexpression_return logicalexpression() throws RecognitionException {
         CriteriaParser.logicalexpression_return retval = new CriteriaParser.logicalexpression_return();
         retval.start = input.LT(1);
@@ -317,8 +317,8 @@ public class CriteriaParser extends Parser {
         Object set9_tree=null;
 
         try {
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:77:19: ( arithmeticexpression ( ( LT | LTE | GT | GTE | IS | NE ) arithmeticexpression )* )
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:77:21: arithmeticexpression ( ( LT | LTE | GT | GTE | IS | NE ) arithmeticexpression )*
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:77:19: ( arithmeticexpression ( ( LT | LTE | GT | GTE | IS | NE ) arithmeticexpression )* )
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:77:21: arithmeticexpression ( ( LT | LTE | GT | GTE | IS | NE ) arithmeticexpression )*
             {
             root_0 = (Object)adaptor.nil();
 
@@ -328,7 +328,7 @@ public class CriteriaParser extends Parser {
             state._fsp--;
 
             adaptor.addChild(root_0, arithmeticexpression8.getTree());
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:77:42: ( ( LT | LTE | GT | GTE | IS | NE ) arithmeticexpression )*
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:77:42: ( ( LT | LTE | GT | GTE | IS | NE ) arithmeticexpression )*
             loop3:
             do {
                 int alt3=2;
@@ -348,7 +348,7 @@ public class CriteriaParser extends Parser {
 
                 switch (alt3) {
             	case 1 :
-            	    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:77:43: ( LT | LTE | GT | GTE | IS | NE ) arithmeticexpression
+            	    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:77:43: ( LT | LTE | GT | GTE | IS | NE ) arithmeticexpression
             	    {
             	    set9=(Token)input.LT(1);
             	    set9=(Token)input.LT(1);
@@ -404,7 +404,7 @@ public class CriteriaParser extends Parser {
     };
 
     // $ANTLR start "arithmeticexpression"
-    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:79:1: arithmeticexpression : atom ( ARITHMETIC_OPERATOR atom )* ;
+    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:79:1: arithmeticexpression : atom ( ARITHMETIC_OPERATOR atom )* ;
     public final CriteriaParser.arithmeticexpression_return arithmeticexpression() throws RecognitionException {
         CriteriaParser.arithmeticexpression_return retval = new CriteriaParser.arithmeticexpression_return();
         retval.start = input.LT(1);
@@ -420,8 +420,8 @@ public class CriteriaParser extends Parser {
         Object ARITHMETIC_OPERATOR12_tree=null;
 
         try {
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:79:22: ( atom ( ARITHMETIC_OPERATOR atom )* )
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:79:24: atom ( ARITHMETIC_OPERATOR atom )*
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:79:22: ( atom ( ARITHMETIC_OPERATOR atom )* )
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:79:24: atom ( ARITHMETIC_OPERATOR atom )*
             {
             root_0 = (Object)adaptor.nil();
 
@@ -431,7 +431,7 @@ public class CriteriaParser extends Parser {
             state._fsp--;
 
             adaptor.addChild(root_0, atom11.getTree());
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:79:29: ( ARITHMETIC_OPERATOR atom )*
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:79:29: ( ARITHMETIC_OPERATOR atom )*
             loop4:
             do {
                 int alt4=2;
@@ -446,7 +446,7 @@ public class CriteriaParser extends Parser {
 
                 switch (alt4) {
             	case 1 :
-            	    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:79:30: ARITHMETIC_OPERATOR atom
+            	    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:79:30: ARITHMETIC_OPERATOR atom
             	    {
             	    ARITHMETIC_OPERATOR12=(Token)match(input,ARITHMETIC_OPERATOR,FOLLOW_ARITHMETIC_OPERATOR_in_arithmeticexpression463); 
             	    ARITHMETIC_OPERATOR12_tree = (Object)adaptor.create(ARITHMETIC_OPERATOR12);
@@ -494,7 +494,7 @@ public class CriteriaParser extends Parser {
     };
 
     // $ANTLR start "atom"
-    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:82:1: atom : ( NULL | NUMBER | STRING | FIELD | LPAREN andexpression RPAREN );
+    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:82:1: atom : ( NULL | NUMBER | STRING | FIELD | LPAREN andexpression RPAREN );
     public final CriteriaParser.atom_return atom() throws RecognitionException {
         CriteriaParser.atom_return retval = new CriteriaParser.atom_return();
         retval.start = input.LT(1);
@@ -518,7 +518,7 @@ public class CriteriaParser extends Parser {
         Object RPAREN20_tree=null;
 
         try {
-            // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:82:6: ( NULL | NUMBER | STRING | FIELD | LPAREN andexpression RPAREN )
+            // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:82:6: ( NULL | NUMBER | STRING | FIELD | LPAREN andexpression RPAREN )
             int alt5=5;
             switch ( input.LA(1) ) {
             case NULL:
@@ -555,7 +555,7 @@ public class CriteriaParser extends Parser {
 
             switch (alt5) {
                 case 1 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:82:8: NULL
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:82:8: NULL
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -567,7 +567,7 @@ public class CriteriaParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:82:14: NUMBER
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:82:14: NUMBER
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -579,7 +579,7 @@ public class CriteriaParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:82:23: STRING
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:82:23: STRING
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -591,7 +591,7 @@ public class CriteriaParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:82:32: FIELD
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:82:32: FIELD
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -603,7 +603,7 @@ public class CriteriaParser extends Parser {
                     }
                     break;
                 case 5 :
-                    // com/pmerienne/event/vizualisation/shared/parser/Criteria.g:82:40: LPAREN andexpression RPAREN
+                    // com/pmerienne/eventmonitoring/shared/parser/Criteria.g:82:40: LPAREN andexpression RPAREN
                     {
                     root_0 = (Object)adaptor.nil();
 
