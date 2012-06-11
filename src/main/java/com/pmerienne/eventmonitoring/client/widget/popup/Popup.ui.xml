@@ -1,0 +1,20 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+		
+	</ui:style>
+	<g:HTMLPanel>
+		<div class="modal-header">
+			<g:Button ui:field="closeButton" addStyleNames="close">×</g:Button>
+			<h2 ui:field="header" />
+		</div>
+		
+		<g:HTMLPanel ui:field="body" addStyleNames="modal-body"/>
+		
+		<g:HTMLPanel ui:field="footer" addStyleNames="modal-footer">
+			<g:Button ui:field="okButton" text="Ok" addStyleNames="btn btn-primary" />
+			<g:Button ui:field="cancelButton" text="Cancel" addStyleNames="btn" />
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 

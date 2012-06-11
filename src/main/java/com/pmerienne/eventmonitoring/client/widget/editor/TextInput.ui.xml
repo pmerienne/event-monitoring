@@ -1,0 +1,14 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+	</ui:style>
+
+	<g:HTMLPanel addStyleNames="control-group">
+		<label ui:field="label" class="control-label" />
+		<g:HTMLPanel ui:field="controls" addStyleNames="controls">
+			<g:TextBox ui:field="input" />
+			<span ui:field="error" class="help-inline" />
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>

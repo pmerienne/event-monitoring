@@ -1,0 +1,26 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:c="urn:import:com.google.gwt.user.cellview.client">
+	<ui:style>
+		.title {
+			font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+			font-size: 16px;
+			text-align: left;
+			line-height: normal;
+			color: #3E576F;
+			text-align: center;
+		}
+		
+		.pager {
+			margin-right: auto;
+			margin-left: auto;
+		}
+	</ui:style>
+	<g:HTMLPanel>
+		<h1 ui:field="tableName" class="{style.title}" />
+		
+		<g:HTMLPanel ui:field="container" />
+		
+		<c:SimplePager ui:field="pager" addStyleNames="{style.pager}" location='CENTER'/>
+	</g:HTMLPanel>
+</ui:UiBinder> 

@@ -1,0 +1,55 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+		
+	</ui:style>
+	<g:HTMLPanel addStyleNames="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<div class="nav-collapse">
+					<ul class="nav">
+						<!-- Home -->
+						<li>
+							<a href="#HomePlace:">
+								<i class="icon-home icon-white" />
+								Home
+							</a>
+						</li>
+
+						<!-- Search -->
+						<li>
+							<a href="#SearchPlace:">
+								<i class="icon-search icon-white" />
+								Search
+							</a>
+						</li>
+
+						<!-- Dashboards dropdown -->
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<i class="icon-signal icon-white" />
+								Dashboards
+								<b class="caret"></b>
+							</a>
+							<ul ui:field="dashboardsDropDown" class="dropdown-menu" />
+						</li>
+
+						<!-- Administration dropdown -->
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<i class="icon-wrench icon-white" />
+								Administration
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="#DashboardManagementPlace:">Manage dashboards</a></li>
+								<li><a href="#ConfigurationPlace:">Configuration</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder> 

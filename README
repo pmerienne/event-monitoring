@@ -1,0 +1,28 @@
+Install application
+
+0) Pré requis pour l'installation
+Installer et lancer mongodb (2.0 +). (http://www.mongodb.org/downloads)
+
+Créer la base nécessaire :
+# use eventdb
+# db.addUser('admin','admin')
+
+1) Pré requis pour la compilation
+Créer la base nécessaire :
+# use test
+# db.addUser('test','test')
+
+Installer antlr-gwt-runtime.jar dans votre repository maven local :
+- Télécharger et extraire antlr-gwt-runtime.jar de http://gwtified.googlecode.com/files/gwt-antlr.zip
+- Installer la librairie : mvn install:install-file -Dfile=antlr-gwt-runtime.jar -DgroupId=org.antlr -DartifactId=antlr-gwt-runtime -Dversion=3.3 -Dpackaging=jar
+
+2) Compilation 
+Lancer la commande : 
+mvn install
+
+3) Déploiement dans un tomcat
+Copier le fichier config/mongodb.properties dans le classpath du tomcat (dans TOMCAT_HOME/lib par example)
+Déployer le war provenant de la compilation dans le tomcat
+
+4) Run with Google Plugin for Eclipse (GPE)
+TODO
