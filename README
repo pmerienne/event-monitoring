@@ -25,4 +25,8 @@ Copier le fichier config/mongodb.properties dans le classpath du tomcat (dans TO
 Déployer le war provenant de la compilation dans le tomcat
 
 4) Run with Google Plugin for Eclipse (GPE)
-TODO
+Importer le projet comme projet maven.
+Run as Web Application
+war folder : src/main/webapp
+Ajouter dans les bootstrap entries du classpath (dans la run-configuration) le fichier config/mongodb.properties
+
