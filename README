@@ -1,4 +1,6 @@
-Install application
+Collect and analyze timestamped events from your information system. By collecting events rather than metrics, this application lets you compute aggregate statistics post hoc. It also enables richer analysis, such as time series of arbitrary event sets.
+
+Demo : http://event-monitoring.cloudfoundry.com/
 
 0) Pré requis pour l'installation
 Installer et lancer mongodb (2.0 +). (http://www.mongodb.org/downloads)
