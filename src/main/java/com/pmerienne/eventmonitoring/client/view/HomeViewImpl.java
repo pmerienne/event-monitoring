@@ -26,7 +26,7 @@ public class HomeViewImpl extends Composite implements HomeView {
 
 	public HomeViewImpl() {
 		initWidget(uiBinder.createAndBindUi(this));
-		String endPoint = GWT.getHostPageBaseURL() + "rest/events/add";
+		String endPoint = GWT.getHostPageBaseURL() + "api/events/add";
 		this.restEndPoint.setInnerHTML(endPoint);
 	}
 
