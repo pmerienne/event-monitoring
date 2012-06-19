@@ -5,8 +5,10 @@ import java.util.List;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.HeadingElement;
+import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.cellview.client.ColumnSortEvent.AsyncHandler;
 import com.google.gwt.user.cellview.client.ColumnSortList;
@@ -109,6 +111,11 @@ public class EventTable extends Composite {
 		// Add pager
 		this.pager.setDisplay(this.table);
 
+	}
+
+	@UiHandler("refreshButton")
+	protected void onRefreshClicked(ClickEvent event) {
+		this.refresh();
 	}
 
 	public void addDataProvider(final DataProvider dataProvider) {

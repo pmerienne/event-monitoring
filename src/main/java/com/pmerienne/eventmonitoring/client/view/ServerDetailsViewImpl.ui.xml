@@ -46,7 +46,7 @@
 				</tbody>
 			</table>
 
-			<h1>Server statistics</h1>
+			<g:HTMLPanel ui:field="graphContainer" />
 
 			<v:Footer />
 		</div>

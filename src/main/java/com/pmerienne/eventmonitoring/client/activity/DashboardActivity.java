@@ -168,7 +168,7 @@ public class DashboardActivity extends AbstractActivity implements DashBoardView
 		this.timers.clear();
 	}
 
-	private static class SerieSearcherTimer extends Timer {
+	public static class SerieSearcherTimer extends Timer {
 
 		private TimeSeriesGraph graph;
 

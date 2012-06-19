@@ -22,5 +22,10 @@
 		<g:HTMLPanel ui:field="container" />
 		
 		<c:SimplePager ui:field="pager" addStyleNames="{style.pager}" location="CENTER" visible="false" />
+		
+		<g:Button ui:field="refreshButton" addStyleNames="btn" >
+			<i class="icon-refresh"/>
+			Refresh
+		</g:Button>
 	</g:HTMLPanel>
 </ui:UiBinder> 

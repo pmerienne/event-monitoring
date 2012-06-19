@@ -13,8 +13,14 @@
 		<g:HTMLPanel ui:field="body" addStyleNames="modal-body"/>
 		
 		<g:HTMLPanel ui:field="footer" addStyleNames="modal-footer">
-			<g:Button ui:field="okButton" text="Ok" addStyleNames="btn btn-primary" />
-			<g:Button ui:field="cancelButton" text="Cancel" addStyleNames="btn" />
+			<g:Button ui:field="okButton" addStyleNames="btn btn-primary">
+				<i class="icon-ok icon-white"/>
+				Ok
+			</g:Button>
+			<g:Button ui:field="cancelButton" addStyleNames="btn">
+				<i class="icon-ban-circle"/>
+				Cancel
+			</g:Button>
 		</g:HTMLPanel>
 	</g:HTMLPanel>
 </ui:UiBinder> 
