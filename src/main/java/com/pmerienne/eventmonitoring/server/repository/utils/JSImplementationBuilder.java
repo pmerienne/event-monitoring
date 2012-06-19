@@ -187,6 +187,9 @@ public class JSImplementationBuilder {
 		} else if (tree.getType() == ProjectionParser.SUM_FUNCTION) {
 			impl = "value." + SUM + functionCount.getAndIncrement();
 
+		} else if (tree.getType() == ProjectionParser.NUMBER) {
+			impl = tree.getText();
+
 		} else if (tree.getType() == ProjectionParser.ARITHMETIC_OPERATOR && tree.getChildren() != null) {
 			String part1 = this.getJSFinalizeValuesImplementation((CommonTree) tree.getChild(0), functionCount);
 			String part2 = this.getJSFinalizeValuesImplementation((CommonTree) tree.getChild(1), functionCount);

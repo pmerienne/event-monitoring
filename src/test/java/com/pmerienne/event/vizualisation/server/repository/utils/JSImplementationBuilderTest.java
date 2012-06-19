@@ -167,6 +167,20 @@ public class JSImplementationBuilderTest {
 		String expectedResult = "value = (value.sum0 / value.count1);";
 		assertEquals(magicString(expectedResult), magicString(actualJS));
 	}
+	
+
+	@Test
+	public void testCreateJSFinalizeValueWithNotSoComplexFunctions() {
+		// Create tested data
+		String projectionQuery = "count(date != null) / 180";
+
+		// Test
+		String actualJS = this.jsImplementationBuilder.createJSFinalizeValues(projectionQuery);
+
+		// Assert result
+		String expectedResult = "value = (value.count0 / 180);";
+		assertEquals(magicString(expectedResult), magicString(actualJS));
+	}
 
 	@Test
 	public void testCreateJSFinalizeValueWithComplexCombinedFunctions() {
