@@ -21,6 +21,6 @@
 		
 		<g:HTMLPanel ui:field="container" />
 		
-		<c:SimplePager ui:field="pager" addStyleNames="{style.pager}" location='CENTER'/>
+		<c:SimplePager ui:field="pager" addStyleNames="{style.pager}" location="CENTER" visible="false" />
 	</g:HTMLPanel>
 </ui:UiBinder> 

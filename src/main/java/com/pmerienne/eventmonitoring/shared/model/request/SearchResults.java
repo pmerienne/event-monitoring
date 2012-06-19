@@ -20,6 +20,17 @@ public class SearchResults implements Serializable {
 		super();
 	}
 
+	public SearchResults(SearchRequest request) {
+		super();
+		this.request = request;
+	}
+
+	public SearchResults(SearchRequest request, List<Event> events) {
+		super();
+		this.request = request;
+		this.events = events;
+	}
+
 	public SearchResults(SearchRequest request, List<Event> events, Long totalCount) {
 		super();
 		this.request = request;

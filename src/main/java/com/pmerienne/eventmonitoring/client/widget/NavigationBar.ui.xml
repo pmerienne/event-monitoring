@@ -45,6 +45,7 @@
 							<ul class="dropdown-menu">
 								<li><a href="#DashboardManagementPlace:">Manage dashboards</a></li>
 								<li><a href="#ConfigurationPlace:">Configuration</a></li>
+								<li><a href="#ServerDetailsPlace:">Server details</a></li>
 							</ul>
 						</li>
 					</ul>

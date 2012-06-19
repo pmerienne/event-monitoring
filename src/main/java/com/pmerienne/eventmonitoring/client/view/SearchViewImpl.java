@@ -49,10 +49,9 @@ public class SearchViewImpl extends Composite implements SearchView {
 		initWidget(uiBinder.createAndBindUi(this));
 
 		TableConfiguration configuration = new TableConfiguration("Results", 10, 60 * 1000L);
-		configuration.getColumnConfigurations().add(new ColumnConfiguration("_id", "ID", true, "20%"));
-		configuration.getColumnConfigurations().add(new ColumnConfiguration("date", "Date", true, "20%"));
-		configuration.getColumnConfigurations().add(new ColumnConfiguration("type", "Type", true, "20%"));
-		configuration.getColumnConfigurations().add(new ColumnConfiguration("data", "Data", true, "40%"));
+		configuration.getColumnConfigurations().add(new ColumnConfiguration("date", "Date", true, "30%"));
+		configuration.getColumnConfigurations().add(new ColumnConfiguration("type", "Type", false, "25%"));
+		configuration.getColumnConfigurations().add(new ColumnConfiguration("data", "Data", false, "45%"));
 		this.eventTable = new EventTable(configuration);
 		this.tableContainer.add(this.eventTable);
 	}
@@ -82,7 +81,9 @@ public class SearchViewImpl extends Composite implements SearchView {
 
 	@Override
 	public void setResults(SearchResults results) {
-		this.eventTable.setRowCount(results.getTotalCount().intValue(), true);
+		if (results.getTotalCount() != null) {
+			this.eventTable.setRowCount(results.getTotalCount().intValue(), true);
+		}
 		this.eventTable.setRowData(results.getRequest().getStart(), results.getEvents());
 	}
 

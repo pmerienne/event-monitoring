@@ -45,7 +45,7 @@ public class ConfigurationActivity extends AbstractActivity implements Configura
 		Services.getConfigurationService().createIndex(index, new MethodCallback<Void>() {
 			@Override
 			public void onFailure(Method method, Throwable exception) {
-				Notifications.error("Unable to add index on " + index.getKey() + " : " + exception.getMessage());
+				Notifications.error("Unable to add index on " + index.getKeys() + " : " + exception.getMessage());
 				loadIndexes();
 				clientFactory.getConfigurationView().clear();
 				PopupManager.hidePending();
@@ -53,7 +53,7 @@ public class ConfigurationActivity extends AbstractActivity implements Configura
 
 			@Override
 			public void onSuccess(Method method, Void response) {
-				Notifications.info("Index on " + index.getKey() + " created");
+				Notifications.info("Index on " + index.getKeys() + " created");
 				loadIndexes();
 				PopupManager.hidePending();
 			}
@@ -65,13 +65,13 @@ public class ConfigurationActivity extends AbstractActivity implements Configura
 		Services.getConfigurationService().dropIndex(index, new MethodCallback<Void>() {
 			@Override
 			public void onFailure(Method method, Throwable exception) {
-				Notifications.error("Unable to drop index on " + index.getKey() + " : " + exception.getMessage());
+				Notifications.error("Unable to drop index on " + index.getKeys() + " : " + exception.getMessage());
 				loadIndexes();
 			}
 
 			@Override
 			public void onSuccess(Method method, Void response) {
-				Notifications.info("Index on " + index.getKey() + " droped");
+				Notifications.info("Index on " + index.getKeys() + " droped");
 				loadIndexes();
 			}
 		});

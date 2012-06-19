@@ -1,14 +1,14 @@
 package com.pmerienne.eventmonitoring.shared.model.administration;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Index implements Serializable {
 
 	private static final long serialVersionUID = -51404023763940484L;
 
-	private String key;
-
-	private boolean ascending = true;
+	private List<IndexKey> keys = new ArrayList<IndexKey>();
 
 	private boolean unique = false;
 
@@ -17,39 +17,17 @@ public class Index implements Serializable {
 	public Index() {
 	}
 
-	public Index(String key) {
+	public Index(boolean unique, boolean dropDuplicates) {
 		super();
-		this.key = key;
-	}
-
-	public Index(String key, boolean ascending) {
-		super();
-		this.key = key;
-		this.ascending = ascending;
-	}
-
-	public Index(String key, boolean ascending, boolean unique, boolean dropDuplicates) {
-		super();
-		this.key = key;
-		this.ascending = ascending;
 		this.unique = unique;
 		this.dropDuplicates = dropDuplicates;
 	}
 
-	public String getKey() {
-		return key;
-	}
-
-	public void setKey(String key) {
-		this.key = key;
-	}
-
-	public boolean isAscending() {
-		return ascending;
-	}
-
-	public void setAscending(boolean ascending) {
-		this.ascending = ascending;
+	public Index(List<IndexKey> keys, boolean unique, boolean dropDuplicates) {
+		super();
+		this.keys = keys;
+		this.unique = unique;
+		this.dropDuplicates = dropDuplicates;
 	}
 
 	public boolean isUnique() {
@@ -68,13 +46,20 @@ public class Index implements Serializable {
 		this.dropDuplicates = dropDuplicates;
 	}
 
+	public List<IndexKey> getKeys() {
+		return keys;
+	}
+
+	public void setKeys(List<IndexKey> keys) {
+		this.keys = keys;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + (ascending ? 1231 : 1237);
 		result = prime * result + (dropDuplicates ? 1231 : 1237);
-		result = prime * result + ((key == null) ? 0 : key.hashCode());
+		result = prime * result + ((keys == null) ? 0 : keys.hashCode());
 		result = prime * result + (unique ? 1231 : 1237);
 		return result;
 	}
@@ -88,14 +73,12 @@ public class Index implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Index other = (Index) obj;
-		if (ascending != other.ascending)
-			return false;
 		if (dropDuplicates != other.dropDuplicates)
 			return false;
-		if (key == null) {
-			if (other.key != null)
+		if (keys == null) {
+			if (other.keys != null)
 				return false;
-		} else if (!key.equals(other.key))
+		} else if (!keys.equals(other.keys))
 			return false;
 		if (unique != other.unique)
 			return false;
@@ -104,7 +87,7 @@ public class Index implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Index [key=" + key + ", ascending=" + ascending + ", unique=" + unique + ", dropDuplicates=" + dropDuplicates + "]";
+		return "Index [keys=" + keys + ", unique=" + unique + ", dropDuplicates=" + dropDuplicates + "]";
 	}
 
 }

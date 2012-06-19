@@ -3,6 +3,7 @@ package com.pmerienne.eventmonitoring.server.repository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +11,14 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.mongodb.BasicDBObject;
+import com.mongodb.CommandResult;
+import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 import com.pmerienne.eventmonitoring.shared.model.Event;
+import com.pmerienne.eventmonitoring.shared.model.administration.DatabaseInformation;
 import com.pmerienne.eventmonitoring.shared.model.administration.Index;
+import com.pmerienne.eventmonitoring.shared.model.administration.IndexKey;
 
 @Repository
 public class DatabaseConfigurationImpl implements DatabaseConfiguration, InitializingBean {
@@ -61,9 +66,26 @@ public class DatabaseConfigurationImpl implements DatabaseConfiguration, Initial
 		eventCollection.dropIndex(keys);
 	}
 
+	@Override
+	public DatabaseInformation getDatabaseInformation() {
+		DB db = this.mongoTemplate.getDb();
+		CommandResult stats = db.getStats();
+		DatabaseInformation databaseInformation = new DatabaseInformation();
+		databaseInformation.setName(stats.getString("db"));
+		databaseInformation.setDataSize(stats.getLong("dataSize"));
+		databaseInformation.setFileSize(stats.getLong("fileSize"));
+		databaseInformation.setIndexSize(stats.getLong("indexSize"));
+		databaseInformation.setStorageSize(stats.getLong("storageSize"));
+		databaseInformation.setObjects(stats.getLong("objects"));
+		return databaseInformation;
+	}
+
 	protected DBObject getIndexKeys(Index index) {
-		DBObject mondoIndex = new BasicDBObject(index.getKey(), index.isAscending() ? 1 : -1);
-		return mondoIndex;
+		DBObject mondoIndexKeys = new BasicDBObject();
+		for (IndexKey indexKey : index.getKeys()) {
+			mondoIndexKeys.put(indexKey.getName(), indexKey.getAscending() ? 1 : -1);
+		}
+		return mondoIndexKeys;
 	}
 
 	protected DBObject getIndexOptions(DBObject mongoKeys, Index index) {
@@ -89,12 +111,9 @@ public class DatabaseConfigurationImpl implements DatabaseConfiguration, Initial
 		Object obj = mongoIndex.get("key");
 		if (obj instanceof Map<?, ?> && !((Map<?, ?>) obj).isEmpty()) {
 			Map<?, ?> keys = (Map<?, ?>) obj;
-			String key = keys.keySet().iterator().next().toString();
-			index.setKey(key);
-			try {
-				index.setAscending(Integer.valueOf(keys.get(key).toString()) == 1);
-			} catch (IllegalArgumentException iae) {
-				// not a number !!
+			for (Entry<?, ?> entry : keys.entrySet()) {
+				IndexKey indexKey = new IndexKey((String) entry.getKey(), "1".equals(entry.getValue().toString()));
+				index.getKeys().add(indexKey);
 			}
 		}
 

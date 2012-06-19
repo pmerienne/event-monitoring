@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:46:29 com/pmerienne/eventmonitoring/shared/parser/Projection.g 2012-06-11 15:03:18
+// $ANTLR 3.3 Nov 30, 2010 12:46:29 com/pmerienne/eventmonitoring/shared/parser/Projection.g 2012-06-19 14:07:21
 
 package com.pmerienne.eventmonitoring.shared.parser;
 
@@ -55,8 +55,8 @@ public class ProjectionLexer extends Lexer {
         try {
             int _type = LPAREN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:45:8: ( '(' )
-            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:45:10: '('
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:44:8: ( '(' )
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:44:10: '('
             {
             match('('); 
 
@@ -75,8 +75,8 @@ public class ProjectionLexer extends Lexer {
         try {
             int _type = RPAREN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:46:8: ( ')' )
-            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:46:10: ')'
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:45:8: ( ')' )
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:45:10: ')'
             {
             match(')'); 
 
@@ -95,7 +95,7 @@ public class ProjectionLexer extends Lexer {
         try {
             int _type = AND;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:47:5: ( '&&' | 'and' | 'AND' )
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:46:5: ( '&&' | 'and' | 'AND' )
             int alt1=3;
             switch ( input.LA(1) ) {
             case '&':
@@ -122,7 +122,7 @@ public class ProjectionLexer extends Lexer {
 
             switch (alt1) {
                 case 1 :
-                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:47:7: '&&'
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:46:7: '&&'
                     {
                     match("&&"); 
 
@@ -130,7 +130,7 @@ public class ProjectionLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:47:14: 'and'
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:46:14: 'and'
                     {
                     match("and"); 
 
@@ -138,7 +138,7 @@ public class ProjectionLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:47:22: 'AND'
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:46:22: 'AND'
                     {
                     match("AND"); 
 
@@ -160,7 +160,7 @@ public class ProjectionLexer extends Lexer {
         try {
             int _type = OR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:48:4: ( '||' | 'or' | 'OR' )
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:47:4: ( '||' | 'or' | 'OR' )
             int alt2=3;
             switch ( input.LA(1) ) {
             case '|':
@@ -187,7 +187,7 @@ public class ProjectionLexer extends Lexer {
 
             switch (alt2) {
                 case 1 :
-                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:48:6: '||'
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:47:6: '||'
                     {
                     match("||"); 
 
@@ -195,7 +195,7 @@ public class ProjectionLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:48:13: 'or'
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:47:13: 'or'
                     {
                     match("or"); 
 
@@ -203,7 +203,7 @@ public class ProjectionLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:48:20: 'OR'
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:47:20: 'OR'
                     {
                     match("OR"); 
 
@@ -225,8 +225,8 @@ public class ProjectionLexer extends Lexer {
         try {
             int _type = LT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:49:4: ( '<' )
-            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:49:6: '<'
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:48:4: ( '<' )
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:48:6: '<'
             {
             match('<'); 
 
@@ -245,7 +245,7 @@ public class ProjectionLexer extends Lexer {
         try {
             int _type = LTE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:50:5: ( '<=' | '=<' )
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:49:5: ( '<=' | '=<' )
             int alt3=2;
             switch ( input.LA(1) ) {
             case '<':
@@ -267,7 +267,7 @@ public class ProjectionLexer extends Lexer {
 
             switch (alt3) {
                 case 1 :
-                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:50:7: '<='
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:49:7: '<='
                     {
                     match("<="); 
 
@@ -275,7 +275,7 @@ public class ProjectionLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:50:14: '=<'
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:49:14: '=<'
                     {
                     match("=<"); 
 
@@ -297,8 +297,8 @@ public class ProjectionLexer extends Lexer {
         try {
             int _type = GT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:51:4: ( '>' )
-            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:51:6: '>'
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:50:4: ( '>' )
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:50:6: '>'
             {
             match('>'); 
 
@@ -317,7 +317,7 @@ public class ProjectionLexer extends Lexer {
         try {
             int _type = GTE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:52:5: ( '>=' | '=>' )
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:51:5: ( '>=' | '=>' )
             int alt4=2;
             switch ( input.LA(1) ) {
             case '>':
@@ -339,7 +339,7 @@ public class ProjectionLexer extends Lexer {
 
             switch (alt4) {
                 case 1 :
-                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:52:7: '>='
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:51:7: '>='
                     {
                     match(">="); 
 
@@ -347,7 +347,7 @@ public class ProjectionLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:52:14: '=>'
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:51:14: '=>'
                     {
                     match("=>"); 
 
@@ -369,8 +369,8 @@ public class ProjectionLexer extends Lexer {
         try {
             int _type = IS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:53:4: ( '==' )
-            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:53:6: '=='
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:52:4: ( '==' )
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:52:6: '=='
             {
             match("=="); 
 
@@ -390,8 +390,8 @@ public class ProjectionLexer extends Lexer {
         try {
             int _type = NE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:54:4: ( '!=' )
-            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:54:6: '!='
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:53:4: ( '!=' )
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:53:6: '!='
             {
             match("!="); 
 
@@ -411,7 +411,7 @@ public class ProjectionLexer extends Lexer {
         try {
             int _type = NULL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:55:6: ( 'null' | 'NULL' )
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:54:6: ( 'null' | 'NULL' )
             int alt5=2;
             switch ( input.LA(1) ) {
             case 'n':
@@ -433,7 +433,7 @@ public class ProjectionLexer extends Lexer {
 
             switch (alt5) {
                 case 1 :
-                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:55:8: 'null'
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:54:8: 'null'
                     {
                     match("null"); 
 
@@ -441,7 +441,7 @@ public class ProjectionLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:55:17: 'NULL'
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:54:17: 'NULL'
                     {
                     match("NULL"); 
 
@@ -463,7 +463,7 @@ public class ProjectionLexer extends Lexer {
         try {
             int _type = COUNT_FUNCTION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:57:16: ( 'count' | 'COUNT' )
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:56:16: ( 'count' | 'COUNT' )
             int alt6=2;
             switch ( input.LA(1) ) {
             case 'c':
@@ -485,7 +485,7 @@ public class ProjectionLexer extends Lexer {
 
             switch (alt6) {
                 case 1 :
-                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:57:18: 'count'
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:56:18: 'count'
                     {
                     match("count"); 
 
@@ -493,7 +493,7 @@ public class ProjectionLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:57:28: 'COUNT'
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:56:28: 'COUNT'
                     {
                     match("COUNT"); 
 
@@ -515,7 +515,7 @@ public class ProjectionLexer extends Lexer {
         try {
             int _type = SUM_FUNCTION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:58:14: ( 'sum' | 'SUM' )
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:57:14: ( 'sum' | 'SUM' )
             int alt7=2;
             switch ( input.LA(1) ) {
             case 's':
@@ -537,7 +537,7 @@ public class ProjectionLexer extends Lexer {
 
             switch (alt7) {
                 case 1 :
-                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:58:16: 'sum'
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:57:16: 'sum'
                     {
                     match("sum"); 
 
@@ -545,7 +545,7 @@ public class ProjectionLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:58:24: 'SUM'
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:57:24: 'SUM'
                     {
                     match("SUM"); 
 
@@ -567,7 +567,7 @@ public class ProjectionLexer extends Lexer {
         try {
             int _type = ARITHMETIC_OPERATOR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:60:21: ( '+' | '-' | '/' | '*' )
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:59:21: ( '+' | '-' | '/' | '*' )
             // com/pmerienne/eventmonitoring/shared/parser/Projection.g:
             {
             if ( (input.LA(1)>='*' && input.LA(1)<='+')||input.LA(1)=='-'||input.LA(1)=='/' ) {
@@ -595,14 +595,14 @@ public class ProjectionLexer extends Lexer {
         try {
             int _type = NUMBER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:61:8: ( ( '0' .. '9' )+ | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ '.' ( '0' .. '9' )+ )
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:60:8: ( ( '0' .. '9' )+ | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ '.' ( '0' .. '9' )+ )
             int alt12=3;
             alt12 = dfa12.predict(input);
             switch (alt12) {
                 case 1 :
-                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:61:10: ( '0' .. '9' )+
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:60:10: ( '0' .. '9' )+
                     {
-                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:61:10: ( '0' .. '9' )+
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:60:10: ( '0' .. '9' )+
                     int cnt8=0;
                     loop8:
                     do {
@@ -627,7 +627,7 @@ public class ProjectionLexer extends Lexer {
 
                         switch (alt8) {
                     	case 1 :
-                    	    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:61:11: '0' .. '9'
+                    	    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:60:11: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -647,10 +647,10 @@ public class ProjectionLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:61:25: '.' ( '0' .. '9' )+
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:60:25: '.' ( '0' .. '9' )+
                     {
                     match('.'); 
-                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:61:29: ( '0' .. '9' )+
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:60:29: ( '0' .. '9' )+
                     int cnt9=0;
                     loop9:
                     do {
@@ -675,7 +675,7 @@ public class ProjectionLexer extends Lexer {
 
                         switch (alt9) {
                     	case 1 :
-                    	    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:61:30: '0' .. '9'
+                    	    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:60:30: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -695,9 +695,9 @@ public class ProjectionLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:61:43: ( '0' .. '9' )+ '.' ( '0' .. '9' )+
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:60:43: ( '0' .. '9' )+ '.' ( '0' .. '9' )+
                     {
-                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:61:43: ( '0' .. '9' )+
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:60:43: ( '0' .. '9' )+
                     int cnt10=0;
                     loop10:
                     do {
@@ -722,7 +722,7 @@ public class ProjectionLexer extends Lexer {
 
                         switch (alt10) {
                     	case 1 :
-                    	    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:61:44: '0' .. '9'
+                    	    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:60:44: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -739,7 +739,7 @@ public class ProjectionLexer extends Lexer {
                     } while (true);
 
                     match('.'); 
-                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:61:59: ( '0' .. '9' )+
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:60:59: ( '0' .. '9' )+
                     int cnt11=0;
                     loop11:
                     do {
@@ -764,7 +764,7 @@ public class ProjectionLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:61:60: '0' .. '9'
+                    	    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:60:60: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -798,7 +798,7 @@ public class ProjectionLexer extends Lexer {
         try {
             int _type = FIELD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:62:7: ( 'id' | 'type' | 'date' | 'data.' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '.' )+ )
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:61:7: ( 'id' | 'type' | 'date' | 'data.' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '.' )+ )
             int alt14=4;
             switch ( input.LA(1) ) {
             case 'i':
@@ -866,7 +866,7 @@ public class ProjectionLexer extends Lexer {
 
             switch (alt14) {
                 case 1 :
-                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:62:9: 'id'
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:61:9: 'id'
                     {
                     match("id"); 
 
@@ -874,7 +874,7 @@ public class ProjectionLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:62:16: 'type'
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:61:16: 'type'
                     {
                     match("type"); 
 
@@ -882,7 +882,7 @@ public class ProjectionLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:62:25: 'date'
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:61:25: 'date'
                     {
                     match("date"); 
 
@@ -890,11 +890,11 @@ public class ProjectionLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:62:34: 'data.' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '.' )+
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:61:34: 'data.' ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '.' )+
                     {
                     match("data."); 
 
-                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:62:42: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '.' )+
+                    // com/pmerienne/eventmonitoring/shared/parser/Projection.g:61:42: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '.' )+
                     int cnt13=0;
                     loop13:
                     do {
@@ -1014,10 +1014,10 @@ public class ProjectionLexer extends Lexer {
         try {
             int _type = STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:63:8: ( ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '.' | '/' | ':' | '#' | '&' | '?' )+ )
-            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:63:10: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '.' | '/' | ':' | '#' | '&' | '?' )+
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:62:8: ( ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '.' | '/' | ':' | '#' | '&' | '?' )+ )
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:62:10: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '.' | '/' | ':' | '#' | '&' | '?' )+
             {
-            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:63:10: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '.' | '/' | ':' | '#' | '&' | '?' )+
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:62:10: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '.' | '/' | ':' | '#' | '&' | '?' )+
             int cnt15=0;
             loop15:
             do {
@@ -1140,10 +1140,10 @@ public class ProjectionLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:64:4: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:64:6: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:63:4: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:63:6: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:64:6: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // com/pmerienne/eventmonitoring/shared/parser/Projection.g:63:6: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt16=0;
             loop16:
             do {
@@ -1387,7 +1387,7 @@ public class ProjectionLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "61:1: NUMBER : ( ( '0' .. '9' )+ | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ '.' ( '0' .. '9' )+ );";
+            return "60:1: NUMBER : ( ( '0' .. '9' )+ | '.' ( '0' .. '9' )+ | ( '0' .. '9' )+ '.' ( '0' .. '9' )+ );";
         }
     }
     static final String DFA17_eotS =

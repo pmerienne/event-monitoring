@@ -15,6 +15,8 @@ import com.pmerienne.eventmonitoring.client.view.HomeView;
 import com.pmerienne.eventmonitoring.client.view.HomeViewImpl;
 import com.pmerienne.eventmonitoring.client.view.SearchView;
 import com.pmerienne.eventmonitoring.client.view.SearchViewImpl;
+import com.pmerienne.eventmonitoring.client.view.ServerDetailsView;
+import com.pmerienne.eventmonitoring.client.view.ServerDetailsViewImpl;
 
 public class ClientFactoryImpl implements ClientFactory {
 
@@ -27,6 +29,7 @@ public class ClientFactoryImpl implements ClientFactory {
 	private final DashboardManagementView dashboardManagementView = new DashboardManagementViewImpl();
 	private final EditDashboardView editDashboardView = new EditDashboardViewImpl();
 	private final ConfigurationView configurationView = new ConfigurationViewImpl();
+	private final ServerDetailsView serverInformationView = new ServerDetailsViewImpl();
 
 	@Override
 	public EventBus getEventBus() {
@@ -39,7 +42,7 @@ public class ClientFactoryImpl implements ClientFactory {
 	}
 
 	@Override
-	public DashBoardView getDashBoardView() {
+	public DashBoardView getDashboardView() {
 		return this.dashBoardView;
 	}
 
@@ -67,4 +70,10 @@ public class ClientFactoryImpl implements ClientFactory {
 	public SearchView getSearchView() {
 		return this.searchView;
 	}
+
+	@Override
+	public ServerDetailsView getServerDetailsView() {
+		return serverInformationView;
+	}
+
 }

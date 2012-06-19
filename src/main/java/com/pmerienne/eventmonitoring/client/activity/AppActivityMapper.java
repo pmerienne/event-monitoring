@@ -10,6 +10,7 @@ import com.pmerienne.eventmonitoring.client.place.DashboardPlace;
 import com.pmerienne.eventmonitoring.client.place.EditDashboardPlace;
 import com.pmerienne.eventmonitoring.client.place.HomePlace;
 import com.pmerienne.eventmonitoring.client.place.SearchPlace;
+import com.pmerienne.eventmonitoring.client.place.ServerDetailsPlace;
 
 public class AppActivityMapper implements ActivityMapper {
 
@@ -45,6 +46,9 @@ public class AppActivityMapper implements ActivityMapper {
 
 		} else if (place instanceof ConfigurationPlace) {
 			activity = new ConfigurationActivity(this.clientFactory);
+
+		} else if (place instanceof ServerDetailsPlace) {
+			activity = new ServerDetailsActivity(this.clientFactory);
 
 		}
 		return activity;

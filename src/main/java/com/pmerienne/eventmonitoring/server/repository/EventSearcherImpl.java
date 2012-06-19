@@ -66,20 +66,24 @@ public class EventSearcherImpl implements EventSearcher {
 
 	@Override
 	public SearchResults search(SearchRequest request) {
+		SearchResults searchResults = new SearchResults(request);
+
 		Long current = new Date().getTime();
 		// Create query object
 		Criteria criteria = this.criteriaBuilder.buildCriteria(request.getTableConfiguration().getCriteria());
 		Criteria dateCriteria = where("date").gt(new Date(current - request.getTableConfiguration().getTimeRange()));
 		Query query = Query.query(new Criteria().andOperator(dateCriteria, criteria));
 
+		// Count total results if needed
+		if (request.getNeedTotalCount()) {
+			Long totalCount = this.mongoTemplate.count(query, Event.class);
+			searchResults.setTotalCount(totalCount);
+		}
 		// Sort
 		for (SortedField sortedField : request.getSortedFields()) {
 			Order order = sortedField.isAscending() ? Order.ASCENDING : Order.DESCENDING;
 			query.sort().on(sortedField.getField(), order);
 		}
-
-		// Count total results
-		Long totalCount = this.mongoTemplate.count(query, Event.class);
 
 		// Start and end index
 		query.skip(request.getStart());
@@ -87,6 +91,8 @@ public class EventSearcherImpl implements EventSearcher {
 
 		// Get ranged results
 		List<Event> events = this.mongoTemplate.find(query, Event.class);
-		return new SearchResults(request, events, totalCount);
+		searchResults.setEvents(events);
+
+		return searchResults;
 	}
 }

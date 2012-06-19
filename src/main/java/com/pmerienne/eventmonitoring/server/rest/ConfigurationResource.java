@@ -10,6 +10,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import com.pmerienne.eventmonitoring.server.service.ConfigurationService;
+import com.pmerienne.eventmonitoring.shared.model.administration.DatabaseInformation;
 import com.pmerienne.eventmonitoring.shared.model.administration.Index;
 import com.sun.jersey.api.core.InjectParam;
 
@@ -37,5 +38,11 @@ public class ConfigurationResource {
 	@Path("dropIndex")
 	public void dropIndex(Index index) {
 		this.configurationService.dropIndex(index);
+	}
+
+	@GET
+	@Path("getServerDetails")
+	public DatabaseInformation getServerDetails() {
+		return this.configurationService.getDatabaseInformation();
 	}
 }

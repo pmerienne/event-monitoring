@@ -64,10 +64,6 @@ public class ProjectionValidatorTest {
 		actualResult = this.projectionValidator.isProjectionValid(projection);
 		assertFalse(actualResult);
 
-		projection = "count(type == REQUEST))";
-		actualResult = this.projectionValidator.isProjectionValid(projection);
-		assertFalse(actualResult);
-
 		projection = "sume(data.start - data.end)";
 		actualResult = this.projectionValidator.isProjectionValid(projection);
 		assertFalse(actualResult);

@@ -87,6 +87,18 @@ public class CriteriaBuilderTest {
 	}
 
 	@Test
+	public void testBuildCriteriaWithComplexArithmeticOperators2() {
+		String criteriaQuery = "data.duration > (data.sduration * data.tada) - 0.5)";
+
+		// Test
+		Criteria actualCriteria = this.criteriaBuilder.buildCriteria(criteriaQuery);
+
+		// Assert
+		assertNotNull(actualCriteria);
+		assertEquals("{ \"$where\" : \"this.data.duration>((this.data.sduration*this.data.tada)-0.5)\"}", actualCriteria.getCriteriaObject().toString());
+	}
+
+	@Test
 	public void testBuildCriteriaWithFieldComparaison() {
 		String criteriaQuery = "type == RESPONSE AND data.duration > data.request.duration ";
 

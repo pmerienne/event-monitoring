@@ -53,6 +53,8 @@ public class EventTable extends Composite {
 
 	private List<EventDataColumn> columns = new ArrayList<EventDataColumn>();
 
+	private boolean pagingActivated = false;
+
 	public EventTable(TableConfiguration configuration) {
 		initWidget(uiBinder.createAndBindUi(this));
 		this.configuration = configuration;
@@ -130,7 +132,7 @@ public class EventTable extends Composite {
 				}
 
 				// Create request
-				SearchRequest request = new SearchRequest(EventTable.this.configuration, start, end, sortedFields);
+				SearchRequest request = new SearchRequest(EventTable.this.configuration, start, end, EventTable.this.pagingActivated, sortedFields);
 
 				// Call data provider
 				dataProvider.onRequestChange(request);
@@ -140,6 +142,7 @@ public class EventTable extends Composite {
 	}
 
 	public void refresh() {
+		this.table.setVisibleRange(0, this.configuration.getNbResults());
 		RangeChangeEvent.fire(this.table, new Range(0, this.configuration.getNbResults()));
 	}
 
@@ -153,6 +156,10 @@ public class EventTable extends Composite {
 
 	public void setRowData(int start, List<Event> values) {
 		this.table.setRowData(start, values);
+	}
+
+	public void setVisibleRange(int start, int length) {
+		this.table.setVisibleRange(start, length);
 	}
 
 	public TableConfiguration getConfiguration() {
@@ -170,4 +177,14 @@ public class EventTable extends Composite {
 	public void clearResults() {
 		this.table.setRowCount(0);
 	}
+
+	public boolean isPagingActivated() {
+		return pagingActivated;
+	}
+
+	public void setPagingActivated(boolean pagingActivated) {
+		this.pager.setVisible(pagingActivated);
+		this.pagingActivated = pagingActivated;
+	}
+
 }

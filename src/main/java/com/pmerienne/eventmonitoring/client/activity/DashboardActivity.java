@@ -46,7 +46,7 @@ public class DashboardActivity extends AbstractActivity implements DashBoardView
 
 	@Override
 	public void start(AcceptsOneWidget panel, EventBus eventBus) {
-		DashBoardView view = this.clientFactory.getDashBoardView();
+		DashBoardView view = this.clientFactory.getDashboardView();
 		view.setPresenter(this);
 
 		// Load available dashboards
@@ -73,7 +73,7 @@ public class DashboardActivity extends AbstractActivity implements DashBoardView
 			@Override
 			public void onSuccess(Method method, Dashboard dashBoard) {
 				// Update view
-				DashBoardView view = clientFactory.getDashBoardView();
+				DashBoardView view = clientFactory.getDashboardView();
 				if (dashBoard == null) {
 					view.clear();
 				} else {
@@ -99,7 +99,7 @@ public class DashboardActivity extends AbstractActivity implements DashBoardView
 
 			@Override
 			public void onSuccess(Method method, List<Dashboard> dashboards) {
-				DashBoardView view = clientFactory.getDashBoardView();
+				DashBoardView view = clientFactory.getDashboardView();
 				view.setAvailableDashboards(dashboards);
 			}
 		});
@@ -137,7 +137,9 @@ public class DashboardActivity extends AbstractActivity implements DashBoardView
 
 						@Override
 						public void onSuccess(Method method, SearchResults result) {
-							table.setRowCount(result.getTotalCount().intValue(), true);
+							if (result.getTotalCount() != null) {
+								table.setRowCount(result.getTotalCount().intValue(), true);
+							}
 							table.setRowData(request.getStart(), result.getEvents());
 						}
 					});
@@ -157,7 +159,7 @@ public class DashboardActivity extends AbstractActivity implements DashBoardView
 	}
 
 	private void clear() {
-		DashBoardView view = this.clientFactory.getDashBoardView();
+		DashBoardView view = this.clientFactory.getDashboardView();
 		view.clear();
 
 		for (Timer timer : this.timers) {

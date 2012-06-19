@@ -8,6 +8,7 @@ import com.pmerienne.eventmonitoring.client.view.DashboardManagementView;
 import com.pmerienne.eventmonitoring.client.view.EditDashboardView;
 import com.pmerienne.eventmonitoring.client.view.HomeView;
 import com.pmerienne.eventmonitoring.client.view.SearchView;
+import com.pmerienne.eventmonitoring.client.view.ServerDetailsView;
 
 public interface ClientFactory {
 
@@ -19,11 +20,13 @@ public interface ClientFactory {
 
 	SearchView getSearchView();
 
-	DashBoardView getDashBoardView();
+	DashBoardView getDashboardView();
 
 	DashboardManagementView getDashboardManagementView();
 
 	EditDashboardView getEditDashboardView();
 
 	ConfigurationView getConfigurationView();
+
+	ServerDetailsView getServerDetailsView();
 }

@@ -9,6 +9,7 @@ import javax.ws.rs.Path;
 import org.fusesource.restygwt.client.MethodCallback;
 import org.fusesource.restygwt.client.RestService;
 
+import com.pmerienne.eventmonitoring.shared.model.administration.DatabaseInformation;
 import com.pmerienne.eventmonitoring.shared.model.administration.Index;
 
 @Path("configuration")
@@ -25,4 +26,8 @@ public interface ConfigurationRemoteService extends RestService {
 	@POST
 	@Path("dropIndex")
 	void dropIndex(Index index, MethodCallback<Void> callback);
+
+	@GET
+	@Path("getServerDetails")
+	void getServerDetails(MethodCallback<DatabaseInformation> callback);
 }

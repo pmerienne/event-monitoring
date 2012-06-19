@@ -39,7 +39,6 @@ package com.pmerienne.eventmonitoring.shared.parser;
   }
 }
 
-
 // ***************** lexer rules:
 //the grammar must contain at least one lexer rule
 LPAREN : '(' ;
@@ -71,9 +70,9 @@ WS : ( ' ' | '\t' | '\r' | '\n' )+ { $channel = HIDDEN; } ;
 //start rule
 expression : arithmeticfunctionexpression;
 
-arithmeticfunctionexpression : functionexpression (ARITHMETIC_OPERATOR^ functionexpression)*;
+arithmeticfunctionexpression : functionexpression (ARITHMETIC_OPERATOR^ (functionexpression | NUMBER))*;
 
-functionexpression : COUNT_FUNCTION^ LPAREN! andexpression RPAREN! | SUM_FUNCTION^ LPAREN! sumarithmeticexpression RPAREN!;
+functionexpression :  COUNT_FUNCTION^ LPAREN! andexpression RPAREN! | SUM_FUNCTION^ LPAREN! sumarithmeticexpression RPAREN! | LPAREN! arithmeticfunctionexpression RPAREN!;
 
 andexpression : orexpression (AND^ orexpression)*;
 

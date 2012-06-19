@@ -17,7 +17,7 @@
 			
 			<p>
 				Indexes enhance query performance, often dramatically.
-				It's important to think about the kinds of analyse you will need so that you can define relevant indexes.
+				It's important to think about the kinds of analyse you will need so that you can define <b>relevant indexes</b>.
 			</p>
 			
 			<p>
@@ -29,17 +29,12 @@
 			<p>
 				You may optionally impose a unique key constraint, 
 				which guarantees that no documents are inserted whose values for the indexed keys match those of an existing document.
-			</p>
-			
-			<p>
-				A sparse index is an index that only includes documents with the indexed field.
-				Any document that is missing the sparsely indexed field will not be stored in the index; 
-				the index will therefor be sparse because of the missing documents when values are missing.
+				A unique index cannot be created on a key that has pre-existing duplicate values. If you would like to create the index anyway, 
+				keeping the first document the database indexes and deleting all subsequent documents that have duplicate values, set drop dulplicate.			
 			</p>
 
 			<p>
-				A unique index cannot be created on a key that has pre-existing duplicate values. If you would like to create the index anyway, 
-				keeping the first document the database indexes and deleting all subsequent documents that have duplicate values, set drop dulplicate.			
+				In addition to single-key basic indexes, this application also supports multi-key "compound" indexes.
 			</p>
 
 			<p>

@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Before;
@@ -20,6 +21,7 @@ import com.mongodb.DBObject;
 import com.pmerienne.eventmonitoring.server.repository.DatabaseConfiguration;
 import com.pmerienne.eventmonitoring.shared.model.Event;
 import com.pmerienne.eventmonitoring.shared.model.administration.Index;
+import com.pmerienne.eventmonitoring.shared.model.administration.IndexKey;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("/applicationContext-test.xml")
@@ -53,14 +55,15 @@ public class DatabaseConfigurationImplTest {
 		assertEquals(2, actualIndexes.size());
 
 		Index actualDateIndex = actualIndexes.get(1);
-		assertEquals("date", actualDateIndex.getKey());
-		assertTrue(actualDateIndex.isAscending());
+		assertEquals("date", actualDateIndex.getKeys().get(0).getName());
+		assertTrue(actualDateIndex.getKeys().get(0).getAscending());
 	}
 
 	@Test
 	public void testEnsureIndex() {
 		// Create an index
-		Index index = new Index("data.duration", true, true, true);
+		List<IndexKey> keys = Arrays.asList(new IndexKey("data.duration", true));
+		Index index = new Index(keys, true, true);
 
 		// Call repository
 		this.databaseConfiguration.ensureIndex(index);
@@ -79,7 +82,8 @@ public class DatabaseConfigurationImplTest {
 		this.testCollection.ensureIndex(dateIndex);
 
 		// Drop an index
-		Index index = new Index("date", true, true, true);
+		List<IndexKey> keys = Arrays.asList(new IndexKey("date", true));
+		Index index = new Index(keys, true, true);
 
 		// Call repository
 		this.databaseConfiguration.dropIndex(index);

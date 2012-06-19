@@ -22,7 +22,7 @@ public class Dashboard implements Serializable {
 	private List<TableConfiguration> tableConfigurations = new ArrayList<TableConfiguration>();
 
 	public Dashboard() {
-
+		super();
 	}
 
 	public Dashboard(String name, String description) {
