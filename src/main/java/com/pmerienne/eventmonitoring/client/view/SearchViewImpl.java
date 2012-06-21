@@ -58,8 +58,8 @@ public class SearchViewImpl extends Composite implements SearchView {
 
 	@UiHandler("searchButton")
 	protected void onSearchClicked(ClickEvent event) {
-		this.clearResults();
 		if (this.validate()) {
+			this.clearTable();
 			this.updateTableConfiguration();
 			this.eventTable.refresh();
 		}
@@ -72,10 +72,10 @@ public class SearchViewImpl extends Composite implements SearchView {
 		this.criteriaInput.clear();
 		this.timeRangeInput.clear();
 
-		this.clearResults();
+		this.clearTable();
 	}
 
-	public void clearResults() {
+	public void clearTable() {
 		this.eventTable.clearResults();
 	}
 
@@ -101,6 +101,11 @@ public class SearchViewImpl extends Composite implements SearchView {
 	@Override
 	public void setAvailableDashboards(List<Dashboard> dashboards) {
 		this.navigationBar.setAvailableDashboards(dashboards);
+	}
+
+	@Override
+	public void setPending(boolean pending) {
+		this.eventTable.setPending(pending);
 	}
 
 	private boolean validate() {

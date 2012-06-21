@@ -11,7 +11,6 @@ import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.pmerienne.eventmonitoring.client.ClientFactory;
-import com.pmerienne.eventmonitoring.client.activity.DashboardActivity.SerieSearcherTimer;
 import com.pmerienne.eventmonitoring.client.service.Services;
 import com.pmerienne.eventmonitoring.client.utils.Notifications;
 import com.pmerienne.eventmonitoring.client.view.ServerDetailsView;

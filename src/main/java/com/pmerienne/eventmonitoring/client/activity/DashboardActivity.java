@@ -1,7 +1,6 @@
 package com.pmerienne.eventmonitoring.client.activity;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.fusesource.restygwt.client.Method;
@@ -14,7 +13,6 @@ import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.pmerienne.eventmonitoring.client.ClientFactory;
 import com.pmerienne.eventmonitoring.client.service.Services;
 import com.pmerienne.eventmonitoring.client.utils.Notifications;
-import com.pmerienne.eventmonitoring.client.utils.TimeDataFetcher;
 import com.pmerienne.eventmonitoring.client.view.DashBoardView;
 import com.pmerienne.eventmonitoring.client.widget.TimeSeriesGraph;
 import com.pmerienne.eventmonitoring.client.widget.table.EventTable;
@@ -23,8 +21,6 @@ import com.pmerienne.eventmonitoring.shared.model.Dashboard;
 import com.pmerienne.eventmonitoring.shared.model.configuration.SerieConfiguration;
 import com.pmerienne.eventmonitoring.shared.model.request.SearchRequest;
 import com.pmerienne.eventmonitoring.shared.model.request.SearchResults;
-import com.pmerienne.eventmonitoring.shared.model.request.TimeSerieRequest;
-import com.pmerienne.eventmonitoring.shared.model.request.TimeSerieResults;
 
 public class DashboardActivity extends AbstractActivity implements DashBoardView.Presenter {
 
@@ -129,10 +125,13 @@ public class DashboardActivity extends AbstractActivity implements DashBoardView
 			table.addDataProvider(new DataProvider() {
 				@Override
 				public void onRequestChange(final SearchRequest request) {
+					table.setPending(true);
+					
 					Services.getEventService().search(request, new MethodCallback<SearchResults>() {
 						@Override
 						public void onFailure(Method method, Throwable caught) {
 							Notifications.error("Search failed : " + caught.getMessage());
+							table.setPending(false);
 						}
 
 						@Override
@@ -141,6 +140,7 @@ public class DashboardActivity extends AbstractActivity implements DashBoardView
 								table.setRowCount(result.getTotalCount().intValue(), true);
 							}
 							table.setRowData(request.getStart(), result.getEvents());
+							table.setPending(false);
 						}
 					});
 				}
@@ -166,43 +166,6 @@ public class DashboardActivity extends AbstractActivity implements DashBoardView
 			timer.cancel();
 		}
 		this.timers.clear();
-	}
-
-	public static class SerieSearcherTimer extends Timer {
-
-		private TimeSeriesGraph graph;
-
-		private SerieConfiguration serieConfiguration;
-
-		private Date lastUpdate;
-
-		public SerieSearcherTimer(TimeSeriesGraph graph, SerieConfiguration serieConfiguration) {
-			super();
-			this.graph = graph;
-			this.serieConfiguration = serieConfiguration;
-			this.lastUpdate = new Date(new Date().getTime() - graph.getGraphConfiguration().getTimeRange());
-		}
-
-		@Override
-		public void run() {
-			final Date from = this.lastUpdate;
-			final Date to = new Date();
-			this.lastUpdate = to;
-
-			Services.getEventService().search(new TimeSerieRequest(serieConfiguration, from, to), new MethodCallback<TimeSerieResults>() {
-				@Override
-				public void onFailure(Method method, Throwable caught) {
-					String graphName = graph.getGraphConfiguration().getName();
-					String serieName = serieConfiguration.getName();
-					Notifications.error("Unable to load data for " + graphName + ":" + serieName + ". Cause : " + caught.getMessage());
-				}
-
-				@Override
-				public void onSuccess(Method method, TimeSerieResults result) {
-					graph.addData(serieConfiguration.getName(), TimeDataFetcher.fetchDatas(result));
-				}
-			});
-		}
 	}
 
 }

@@ -52,19 +52,20 @@ public class SearchActivity extends AbstractActivity implements SearchView.Prese
 
 	@Override
 	public void onRequestChange(SearchRequest request) {
+		final SearchView view = clientFactory.getSearchView();
+		view.setPending(true);
+		
 		Services.getEventService().search(request, new MethodCallback<SearchResults>() {
 			@Override
 			public void onFailure(Method method, Throwable caught) {
 				Notifications.error("Search failed : " + caught.getMessage());
+				view.setPending(false);
 			}
 
 			@Override
 			public void onSuccess(Method method, SearchResults results) {
-				SearchView view = clientFactory.getSearchView();
 				view.setResults(results);
-				if (results.getEvents().isEmpty()) {
-					Notifications.info("No matching event found");
-				}
+				view.setPending(false);
 			}
 		});
 	}

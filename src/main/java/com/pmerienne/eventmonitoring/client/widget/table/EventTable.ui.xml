@@ -11,21 +11,26 @@
 			text-align: center;
 		}
 		
-		.pager {
-			margin-right: auto;
-			margin-left: auto;
+		.mainDiv {
+			text-align: center;
+			overflow: hidden;	
 		}
 	</ui:style>
-	<g:HTMLPanel>
+	
+	<ui:with type="com.pmerienne.eventmonitoring.client.resource.ApplicationBundle" field="res" />
+	
+	<g:HTMLPanel addStyleNames="{style.mainDiv}">
 		<h1 ui:field="tableName" class="{style.title}" />
 		
 		<g:HTMLPanel ui:field="container" />
-		
-		<c:SimplePager ui:field="pager" addStyleNames="{style.pager}" location="CENTER" visible="false" />
-		
+
+		<c:SimplePager ui:field="pager" location="CENTER" visible="false" />
+
 		<g:Button ui:field="refreshButton" addStyleNames="btn" >
 			<i class="icon-refresh"/>
 			Refresh
 		</g:Button>
+
+		<g:Image ui:field="loadingImage" resource="{res.spinner}" visible="false" />
 	</g:HTMLPanel>
 </ui:UiBinder> 

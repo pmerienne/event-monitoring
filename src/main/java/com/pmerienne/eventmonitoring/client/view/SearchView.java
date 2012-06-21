@@ -18,6 +18,8 @@ public interface SearchView extends IsWidget {
 	void addDataProvider(DataProvider dataProvider);
 
 	void removeDataProvider(DataProvider dataProvider);
+	
+	void setPending(boolean pending);
 
 	interface Presenter {
 	}

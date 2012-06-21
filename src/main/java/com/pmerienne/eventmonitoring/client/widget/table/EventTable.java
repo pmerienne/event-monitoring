@@ -14,8 +14,10 @@ import com.google.gwt.user.cellview.client.ColumnSortEvent.AsyncHandler;
 import com.google.gwt.user.cellview.client.ColumnSortList;
 import com.google.gwt.user.cellview.client.ColumnSortList.ColumnSortInfo;
 import com.google.gwt.user.cellview.client.SimplePager;
+import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTMLPanel;
+import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.view.client.AsyncDataProvider;
 import com.google.gwt.view.client.HasData;
@@ -46,6 +48,12 @@ public class EventTable extends Composite {
 
 	@UiField
 	SimplePager pager;
+
+	@UiField
+	Image loadingImage;
+
+	@UiField
+	Button refreshButton;
 
 	private CellTable<Event> table;
 
@@ -194,4 +202,10 @@ public class EventTable extends Composite {
 		this.pagingActivated = pagingActivated;
 	}
 
+	public void setPending(boolean pending) {
+		this.pager.setVisible(!pending && this.pagingActivated);
+		this.container.setVisible(!pending);
+		this.refreshButton.setVisible(!pending);
+		this.loadingImage.setVisible(pending);
+	}
 }
