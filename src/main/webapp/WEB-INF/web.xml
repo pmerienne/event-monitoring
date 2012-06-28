@@ -5,7 +5,7 @@
 
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath*:applicationContext.xml</param-value>
+		<param-value>classpath:applicationContext.xml</param-value>
 	</context-param>
 
 	<!-- Listeners permettant de charger le contexte applicatif Spring -->

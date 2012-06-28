@@ -21,6 +21,8 @@ public class Dashboard implements Serializable {
 
 	private List<TableConfiguration> tableConfigurations = new ArrayList<TableConfiguration>();
 
+	private List<GraphConfiguration> pieConfigurations = new ArrayList<GraphConfiguration>();
+
 	public Dashboard() {
 		super();
 	}
@@ -80,6 +82,14 @@ public class Dashboard implements Serializable {
 		this.tableConfigurations = tableConfigurations;
 	}
 
+	public List<GraphConfiguration> getPieConfigurations() {
+		return pieConfigurations;
+	}
+
+	public void setPieConfigurations(List<GraphConfiguration> pieConfigurations) {
+		this.pieConfigurations = pieConfigurations;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -88,6 +98,7 @@ public class Dashboard implements Serializable {
 		result = prime * result + ((graphConfigurations == null) ? 0 : graphConfigurations.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((pieConfigurations == null) ? 0 : pieConfigurations.hashCode());
 		result = prime * result + ((tableConfigurations == null) ? 0 : tableConfigurations.hashCode());
 		return result;
 	}
@@ -121,6 +132,11 @@ public class Dashboard implements Serializable {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
+		if (pieConfigurations == null) {
+			if (other.pieConfigurations != null)
+				return false;
+		} else if (!pieConfigurations.equals(other.pieConfigurations))
+			return false;
 		if (tableConfigurations == null) {
 			if (other.tableConfigurations != null)
 				return false;
@@ -132,7 +148,7 @@ public class Dashboard implements Serializable {
 	@Override
 	public String toString() {
 		return "Dashboard [id=" + id + ", name=" + name + ", description=" + description + ", graphConfigurations=" + graphConfigurations
-				+ ", tableConfigurations=" + tableConfigurations + "]";
+				+ ", tableConfigurations=" + tableConfigurations + ", pieConfigurations=" + pieConfigurations + "]";
 	}
 
 }

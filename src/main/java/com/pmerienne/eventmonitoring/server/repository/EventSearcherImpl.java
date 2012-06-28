@@ -17,13 +17,17 @@ import org.springframework.stereotype.Repository;
 import com.pmerienne.eventmonitoring.server.repository.utils.CriteriaBuilder;
 import com.pmerienne.eventmonitoring.server.repository.utils.MapReduceHelper;
 import com.pmerienne.eventmonitoring.server.repository.utils.MapReduceHelper.ValueObject;
+import com.pmerienne.eventmonitoring.shared.model.PieData;
 import com.pmerienne.eventmonitoring.shared.model.Event;
 import com.pmerienne.eventmonitoring.shared.model.TimeData;
+import com.pmerienne.eventmonitoring.shared.model.configuration.SerieConfiguration;
+import com.pmerienne.eventmonitoring.shared.model.request.PieRequest;
+import com.pmerienne.eventmonitoring.shared.model.request.PieResults;
 import com.pmerienne.eventmonitoring.shared.model.request.SearchRequest;
+import com.pmerienne.eventmonitoring.shared.model.request.SearchRequest.SortedField;
 import com.pmerienne.eventmonitoring.shared.model.request.SearchResults;
 import com.pmerienne.eventmonitoring.shared.model.request.TimeSerieRequest;
 import com.pmerienne.eventmonitoring.shared.model.request.TimeSerieResults;
-import com.pmerienne.eventmonitoring.shared.model.request.SearchRequest.SortedField;
 
 @Repository
 public class EventSearcherImpl implements EventSearcher {
@@ -47,9 +51,11 @@ public class EventSearcherImpl implements EventSearcher {
 		Query query = Query.query(new Criteria().andOperator(dateCriteria, criteria));
 
 		// Create map/reduce/finalize functions
-		String mapFunction = this.mapReduceHelper.getMapFunction(request);
-		String reduceFunction = this.mapReduceHelper.getReduceFunction(request);
-		String finalizeFunction = this.mapReduceHelper.getFinalizeFunction(request);
+		SerieConfiguration configuration = request.getConfiguration();
+		String mapFunction = this.mapReduceHelper.getMapFunctionForDateAggration(configuration);
+		String reduceFunction = this.mapReduceHelper.getReduceFunction(configuration);
+		String finalizeFunction = this.mapReduceHelper.getFinalizeFunction(configuration);
+
 		// Create map reduce options
 		MapReduceOptions options = MapReduceOptions.options().outputTypeInline().finalizeFunction(finalizeFunction);
 
@@ -94,5 +100,34 @@ public class EventSearcherImpl implements EventSearcher {
 		searchResults.setEvents(events);
 
 		return searchResults;
+	}
+
+	@Override
+	public PieResults search(PieRequest request) {
+		PieResults pieResults = new PieResults(request);
+
+		// Create query
+		Criteria criteria = this.criteriaBuilder.buildCriteria(request.getConfiguration().getCriteriaQuery());
+		Criteria dateCriteria = where("date").gt(request.getFrom()).lt(request.getTo());
+		Query query = Query.query(new Criteria().andOperator(dateCriteria, criteria));
+
+		// Create map/reduce/finalize functions
+		SerieConfiguration configuration = request.getConfiguration();
+		String mapFunction = this.mapReduceHelper.getMapFunctionForMath(configuration);
+		String reduceFunction = this.mapReduceHelper.getReduceFunction(configuration);
+		String finalizeFunction = this.mapReduceHelper.getFinalizeFunction(configuration);
+
+		// Create map reduce options
+		MapReduceOptions options = MapReduceOptions.options().outputTypeInline().finalizeFunction(finalizeFunction);
+
+		// Query mongodb database
+		MapReduceResults<ValueObject> results = this.mongoTemplate.mapReduce(query, "event", mapFunction, reduceFunction, options, ValueObject.class);
+
+		// Add result to the results
+		for (ValueObject valueObject : results) {
+			PieData pieData = new PieData(configuration.getName(), valueObject.getValue());
+			pieResults.setData(pieData);
+		}
+		return pieResults;
 	}
 }

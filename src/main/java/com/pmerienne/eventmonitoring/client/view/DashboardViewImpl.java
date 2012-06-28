@@ -12,6 +12,7 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.pmerienne.eventmonitoring.client.widget.NavigationBar;
+import com.pmerienne.eventmonitoring.client.widget.PieChart;
 import com.pmerienne.eventmonitoring.client.widget.TimeSeriesGraph;
 import com.pmerienne.eventmonitoring.client.widget.table.EventTable;
 import com.pmerienne.eventmonitoring.shared.model.Dashboard;
@@ -39,6 +40,8 @@ public class DashboardViewImpl extends Composite implements DashBoardView {
 
 	private List<TimeSeriesGraph> graphs = new ArrayList<TimeSeriesGraph>();
 
+	private List<PieChart> pieCharts = new ArrayList<PieChart>();
+
 	private List<EventTable> eventTables = new ArrayList<EventTable>();
 
 	@SuppressWarnings("unused")
@@ -55,6 +58,7 @@ public class DashboardViewImpl extends Composite implements DashBoardView {
 				.setInnerHTML("There is no dashboard to display. Select a dashboard in the navigation menu or <a href='#EditDashboardPlace:'>create a new one</a>.");
 
 		this.graphs.clear();
+		this.pieCharts.clear();
 		this.eventTables.clear();
 		this.container.clear();
 	}
@@ -65,13 +69,22 @@ public class DashboardViewImpl extends Composite implements DashBoardView {
 		this.dashboardDescription.setInnerHTML(dashBoard.getDescription());
 
 		this.graphs.clear();
+		this.pieCharts.clear();
 		this.eventTables.clear();
 		this.container.clear();
+
 		for (GraphConfiguration graphConfiguration : dashBoard.getGraphConfigurations()) {
 			TimeSeriesGraph graph = new TimeSeriesGraph(graphConfiguration);
 			this.container.add(graph);
 			this.graphs.add(graph);
 		}
+
+		for (GraphConfiguration graphConfiguration : dashBoard.getPieConfigurations()) {
+			PieChart pieChart = new PieChart(graphConfiguration);
+			this.container.add(pieChart);
+			this.pieCharts.add(pieChart);
+		}
+
 		for (TableConfiguration tableConfiguration : dashBoard.getTableConfigurations()) {
 			EventTable eventTable = new EventTable(tableConfiguration);
 			this.container.add(eventTable);
@@ -88,6 +101,11 @@ public class DashboardViewImpl extends Composite implements DashBoardView {
 	@Override
 	public List<TimeSeriesGraph> getTimeSeriesGraphs() {
 		return graphs;
+	}
+
+	@Override
+	public List<PieChart> getPieChartGraphs() {
+		return this.pieCharts;
 	}
 
 	@Override

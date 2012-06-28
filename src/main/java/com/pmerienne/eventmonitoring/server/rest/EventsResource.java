@@ -8,6 +8,8 @@ import javax.ws.rs.core.MediaType;
 
 import com.pmerienne.eventmonitoring.server.service.EventService;
 import com.pmerienne.eventmonitoring.shared.model.Event;
+import com.pmerienne.eventmonitoring.shared.model.request.PieRequest;
+import com.pmerienne.eventmonitoring.shared.model.request.PieResults;
 import com.pmerienne.eventmonitoring.shared.model.request.SearchRequest;
 import com.pmerienne.eventmonitoring.shared.model.request.SearchResults;
 import com.pmerienne.eventmonitoring.shared.model.request.TimeSerieRequest;
@@ -31,6 +33,12 @@ public class EventsResource {
 	@POST
 	@Path("timeSerieSearch")
 	public TimeSerieResults search(TimeSerieRequest request) {
+		return this.eventService.search(request);
+	}
+
+	@POST
+	@Path("pieChartSearch")
+	public PieResults search(PieRequest request) {
 		return this.eventService.search(request);
 	}
 

@@ -14,6 +14,7 @@ import com.pmerienne.eventmonitoring.client.ClientFactory;
 import com.pmerienne.eventmonitoring.client.service.Services;
 import com.pmerienne.eventmonitoring.client.utils.Notifications;
 import com.pmerienne.eventmonitoring.client.view.DashBoardView;
+import com.pmerienne.eventmonitoring.client.widget.PieChart;
 import com.pmerienne.eventmonitoring.client.widget.TimeSeriesGraph;
 import com.pmerienne.eventmonitoring.client.widget.table.EventTable;
 import com.pmerienne.eventmonitoring.client.widget.table.EventTable.DataProvider;
@@ -77,6 +78,7 @@ public class DashboardActivity extends AbstractActivity implements DashBoardView
 
 					// Init time series timers
 					initTimeSerieTimers(view.getTimeSeriesGraphs());
+					initPieChartTimers(view.getPieChartGraphs());
 
 					// Init event tables
 					initTables(view.getEventTables());
@@ -120,13 +122,32 @@ public class DashboardActivity extends AbstractActivity implements DashBoardView
 		}
 	}
 
+	private void initPieChartTimers(List<PieChart> pieCharts) {
+		for (PieChart pieChart : pieCharts) {
+			for (SerieConfiguration serieConfiguration : pieChart.getGraphConfiguration().getSerieConfigurations()) {
+				// Create timer
+				PieChartSearcherTimer timer = new PieChartSearcherTimer(pieChart, serieConfiguration);
+
+				// Do first search
+				timer.run();
+
+				// Schedule search
+				timer.scheduleRepeating(serieConfiguration.getInterval().intValue());
+
+				// Store timer
+				this.timers.add(timer);
+			}
+
+		}
+	}
+
 	private void initTables(List<EventTable> eventTables) {
 		for (final EventTable table : eventTables) {
 			table.addDataProvider(new DataProvider() {
 				@Override
 				public void onRequestChange(final SearchRequest request) {
 					table.setPending(true);
-					
+
 					Services.getEventService().search(request, new MethodCallback<SearchResults>() {
 						@Override
 						public void onFailure(Method method, Throwable caught) {

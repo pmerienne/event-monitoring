@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 import com.pmerienne.eventmonitoring.server.repository.EventRepository;
 import com.pmerienne.eventmonitoring.server.repository.EventSearcher;
 import com.pmerienne.eventmonitoring.shared.model.Event;
+import com.pmerienne.eventmonitoring.shared.model.request.PieRequest;
+import com.pmerienne.eventmonitoring.shared.model.request.PieResults;
 import com.pmerienne.eventmonitoring.shared.model.request.SearchRequest;
 import com.pmerienne.eventmonitoring.shared.model.request.SearchResults;
 import com.pmerienne.eventmonitoring.shared.model.request.TimeSerieRequest;
@@ -43,6 +45,12 @@ public class EventServiceImpl implements EventService {
 	public TimeSerieResults search(TimeSerieRequest request) {
 		TimeSerieResults datas = this.eventSearcher.search(request);
 		return datas;
+	}
+
+	@Override
+	public PieResults search(PieRequest request) {
+		PieResults results = this.eventSearcher.search(request);
+		return results;
 	}
 
 	@Async

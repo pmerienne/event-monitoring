@@ -7,6 +7,8 @@ import org.fusesource.restygwt.client.MethodCallback;
 import org.fusesource.restygwt.client.RestService;
 
 import com.pmerienne.eventmonitoring.shared.model.Event;
+import com.pmerienne.eventmonitoring.shared.model.request.PieRequest;
+import com.pmerienne.eventmonitoring.shared.model.request.PieResults;
 import com.pmerienne.eventmonitoring.shared.model.request.SearchRequest;
 import com.pmerienne.eventmonitoring.shared.model.request.SearchResults;
 import com.pmerienne.eventmonitoring.shared.model.request.TimeSerieRequest;
@@ -22,6 +24,10 @@ public interface EventRemoteService extends RestService {
 	@POST
 	@Path("timeSerieSearch")
 	void search(TimeSerieRequest request, MethodCallback<TimeSerieResults> callback);
+
+	@POST
+	@Path("pieChartSearch")
+	void search(PieRequest request, MethodCallback<PieResults> callback);
 
 	@POST
 	@Path("add")

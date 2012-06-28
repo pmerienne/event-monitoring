@@ -46,6 +46,12 @@ public class DashboardEditor extends Composite implements Editor<Dashboard> {
 		this.configurationsContainer.add(editor);
 	}
 
+	@UiHandler("addPieButton")
+	protected void onAddPieClicked(ClickEvent event) {
+		PieChartEditor editor = new PieChartEditor();
+		this.configurationsContainer.add(editor);
+	}
+
 	@Override
 	public void setValue(Dashboard dashboard) {
 		this.clear();
@@ -66,6 +72,12 @@ public class DashboardEditor extends Composite implements Editor<Dashboard> {
 			editor.setValue(tableConfiguration);
 			this.configurationsContainer.add(editor);
 		}
+
+		for (GraphConfiguration pieConfiguration : dashboard.getPieConfigurations()) {
+			PieChartEditor editor = new PieChartEditor();
+			editor.setValue(pieConfiguration);
+			this.configurationsContainer.add(editor);
+		}
 	}
 
 	@Override
@@ -78,6 +90,7 @@ public class DashboardEditor extends Composite implements Editor<Dashboard> {
 
 		this.dashboard.getGraphConfigurations().clear();
 		this.dashboard.getTableConfigurations().clear();
+		this.dashboard.getPieConfigurations().clear();
 		for (int i = 0; i < this.configurationsContainer.getWidgetCount(); i++) {
 			Widget w = this.configurationsContainer.getWidget(i);
 			if (w instanceof GraphConfigurationEditor) {
@@ -86,6 +99,9 @@ public class DashboardEditor extends Composite implements Editor<Dashboard> {
 			} else if (w instanceof TableConfigurationEditor) {
 				TableConfiguration tableConfiguration = ((TableConfigurationEditor) w).getValue();
 				this.dashboard.getTableConfigurations().add(tableConfiguration);
+			} else if (w instanceof PieChartEditor) {
+				GraphConfiguration graphConfiguration = ((PieChartEditor) w).getValue();
+				this.dashboard.getPieConfigurations().add(graphConfiguration);
 			}
 		}
 

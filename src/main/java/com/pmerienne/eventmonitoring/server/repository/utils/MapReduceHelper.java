@@ -3,7 +3,7 @@ package com.pmerienne.eventmonitoring.server.repository.utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.pmerienne.eventmonitoring.shared.model.request.TimeSerieRequest;
+import com.pmerienne.eventmonitoring.shared.model.configuration.SerieConfiguration;
 
 /**
  * This class provides methods helping you to create map/reduce commands (as
@@ -18,10 +18,10 @@ public class MapReduceHelper {
 	@Autowired
 	private JSImplementationBuilder jsImplementationBuilder;
 
-	public String getMapFunction(TimeSerieRequest request) {
+	public String getMapFunctionForDateAggration(SerieConfiguration configuration) {
 		// Get request params
-		Long interval = request.getConfiguration().getInterval();
-		String jsMapValues = this.jsImplementationBuilder.createJSMapValues(request.getConfiguration().getProjectionQuery());
+		Long interval = configuration.getInterval();
+		String jsMapValues = this.jsImplementationBuilder.createJSMapValues(configuration.getProjectionQuery());
 
 		// Build function
 		StringBuilder sb = new StringBuilder();
@@ -35,9 +35,26 @@ public class MapReduceHelper {
 
 		return sb.toString();
 	}
+	
 
-	public String getReduceFunction(TimeSerieRequest request) {
-		String jsReduceResult = this.jsImplementationBuilder.createJSReduceResults(request.getConfiguration().getProjectionQuery());
+	public String getMapFunctionForMath(SerieConfiguration configuration) {
+		// Get request params
+		String jsMapValues = this.jsImplementationBuilder.createJSMapValues(configuration.getProjectionQuery());
+
+		// Build function
+		StringBuilder sb = new StringBuilder();
+		sb.append("function () { ");
+		sb.append("		var value = new Object; ");
+		sb.append("		value.finalValue = 0; ");
+		sb.append(jsMapValues);
+		sb.append("		emit(1, value); ");
+		sb.append("} ");
+
+		return sb.toString();
+	}
+
+	public String getReduceFunction(SerieConfiguration configuration) {
+		String jsReduceResult = this.jsImplementationBuilder.createJSReduceResults(configuration.getProjectionQuery());
 
 		StringBuilder sb = new StringBuilder();
 		sb.append("function (key, values) { ");
@@ -50,8 +67,8 @@ public class MapReduceHelper {
 		return sb.toString();
 	}
 
-	public String getFinalizeFunction(TimeSerieRequest request) {
-		String jsFinalizeValue = this.jsImplementationBuilder.createJSFinalizeValues(request.getConfiguration().getProjectionQuery());
+	public String getFinalizeFunction(SerieConfiguration configuration) {
+		String jsFinalizeValue = this.jsImplementationBuilder.createJSFinalizeValues(configuration.getProjectionQuery());
 
 		StringBuilder sb = new StringBuilder();
 		sb.append("function (key, value) { ");

@@ -18,6 +18,10 @@
 						<i class="icon-signal"/>
 						Add graph
 					</g:Button>
+					<g:Button ui:field="addPieButton" addStyleNames="btn">
+						<i class="icon-adjust"/>
+						Add pie
+					</g:Button>
 					<g:Button ui:field="addTableButton" addStyleNames="btn">
 						<i class="icon-list-alt"/>
 						Add table
