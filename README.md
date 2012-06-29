@@ -13,12 +13,12 @@ This application is compiled with JDK6. The launch scripts set up JVM options th
 If you use an old JDK6, please consider upgrading, or edit the scripts for removing the unsupported options.
 If you use an JDK < 6, you have to upgrade.
 
-You must have a mongodb 2.0+ instance running on localhost port 27017. Mongodb must have database named eventdb with a user 'admin' (password : admin)
+You must have a mongodb 2.0+ instance running on localhost port 27017. Mongodb must have database named eventdb with an admin user (username : 'admin', password : 'admin')
 
 # Getting started
 
 You can download event-monitoring as a distribution bundle (.tar.gz or .zip) here (TODO make link). 
-Unpack the binary and put the extracted directory into a conveninent location.
+Unpack the binary and put the extracted directory into a convenient location.
 
 Launch event-monitoring using the following command :
 
@@ -35,8 +35,8 @@ Server (Jetty) configuration are located in the resources/jetty.xml file
 
 1) Pré requis pour la compilation
 Créer la base nécessaire :
-# use test
-# db.addUser('test','test')
+	use test
+	db.addUser('test','test')
 
 Installer antlr-gwt-runtime.jar dans votre repository maven local :
 - Télécharger et extraire antlr-gwt-runtime.jar de http://gwtified.googlecode.com/files/gwt-antlr.zip
