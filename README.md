@@ -17,7 +17,7 @@ You must have a mongodb 2.0+ instance running on localhost port 27017. Mongodb m
 
 # Getting started
 
-You can download event-monitoring as a distribution bundle <a href="https://github.com/pmerienne/event-monitoring/blob/master/releases/com/pmerienne/event-monitoring/0.0.1-SNAPSHOT/event-monitoring-0.0.1-SNAPSHOT-bundle.tar.gz">.tar.gz</a> or <a href="https://github.com/pmerienne/event-monitoring/blob/master/releases/com/pmerienne/event-monitoring/0.0.1-SNAPSHOT/event-monitoring-0.0.1-SNAPSHOT-bundle.zip">.zip</a>. 
+You can download event-monitoring as a distribution bundle <a href="http://cloud.github.com/downloads/pmerienne/event-monitoring/event-monitoring-0.0.1-SNAPSHOT-bundle.tar.gz">.tar.gz</a> or <a href="http://cloud.github.com/downloads/pmerienne/event-monitoring/event-monitoring-0.0.1-SNAPSHOT-bundle.zip">.zip</a>. 
 Unpack the binary and put the extracted directory into a convenient location.
 
 Launch event-monitoring using the following command :
