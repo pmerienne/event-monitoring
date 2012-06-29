@@ -12,7 +12,7 @@
 			system. The release is actually performed from target/checkout, which is 
 			why we need those ../../ . Notice that after deployment, you should commit 
 			and push to the git repository. -->
-		<altDeploymentRepository>release-repo::default::file:../../releases</altDeploymentRepository>
+		<altDeploymentRepository>release-repo::default::file:releases</altDeploymentRepository>
 
 		<webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
 		<!-- Compiler properties -->
@@ -192,7 +192,7 @@
 
 	<profiles>
 		<profile>
-			<id>embedded</id>
+			<id>make-bundle</id>
 			<build>
 				<plugins>
 					<plugin>
@@ -208,7 +208,7 @@
 						<executions>
 							<execution>
 								<id>make-assembly</id>
-								<phase>install</phase>
+								<phase>deploy</phase>
 								<goals>
 									<goal>single</goal>
 								</goals>
@@ -218,7 +218,6 @@
 				</plugins>
 			</build>
 			<dependencies>
-				<!-- Jetty -->
 				<dependency>
 					<groupId>org.eclipse.jetty</groupId>
 					<artifactId>jetty-server</artifactId>
@@ -378,31 +377,6 @@
 			<groupId>org.antlr</groupId>
 			<artifactId>antlr-gwt-runtime</artifactId>
 			<version>3.3</version>
-		</dependency>
-		<!-- Jetty -->
-		<dependency>
-			<groupId>org.eclipse.jetty</groupId>
-			<artifactId>jetty-server</artifactId>
-			<version>${jetty.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.eclipse.jetty</groupId>
-			<artifactId>jetty-webapp</artifactId>
-			<version>${jetty.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.eclipse.jetty</groupId>
-			<artifactId>jetty-start</artifactId>
-			<version>${jetty.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.eclipse.jetty</groupId>
-			<artifactId>jetty-deploy</artifactId>
-			<version>${jetty.version}</version>
-			<scope>provided</scope>
 		</dependency>
 		<!-- Log -->
 		<dependency>
