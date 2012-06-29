@@ -8,12 +8,6 @@
 	<name>${project.artifactId}</name>
 
 	<properties>
-		<!--Trick to deploy releases (using mvn release:perform) to the local file 
-			system. The release is actually performed from target/checkout, which is 
-			why we need those ../../ . Notice that after deployment, you should commit 
-			and push to the git repository. -->
-		<altDeploymentRepository>release-repo::default::file:releases</altDeploymentRepository>
-
 		<webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
 		<!-- Compiler properties -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -69,14 +63,6 @@
 		<!-- Generate compiled stuff in the folder used for developing mode -->
 		<outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<version>2.1</version><!--$NO-MVN-MAN-VER$ -->
-				<configuration>
-					<useReleaseProfile>false</useReleaseProfile>
-				</configuration>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -173,17 +159,6 @@
 		</plugins>
 	</build>
 
-	<distributionManagement>
-		<repository>
-			<id>release-repo</id>
-			<url>https://pmerienne@github.com/pmerienne/event-monitoring/raw/master/releases</url>
-		</repository>
-		<snapshotRepository>
-			<id>snapshot-repo</id>
-			<url>https://pmerienne@github.com/pmerienne/event-monitoring/raw/master/snapshots</url>
-		</snapshotRepository>
-	</distributionManagement>
-
 	<scm>
 		<connection>scm:git:git@github.com:pmerienne/event-monitoring.git</connection>
 		<developerConnection>scm:git:git@github.com:pmerienne/event-monitoring.git</developerConnection>
@@ -208,7 +183,7 @@
 						<executions>
 							<execution>
 								<id>make-assembly</id>
-								<phase>deploy</phase>
+								<phase>install</phase>
 								<goals>
 									<goal>single</goal>
 								</goals>
