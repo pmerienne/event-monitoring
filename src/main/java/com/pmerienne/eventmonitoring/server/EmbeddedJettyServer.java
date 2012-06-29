@@ -6,7 +6,7 @@ import java.security.ProtectionDomain;
 import org.apache.log4j.Logger;
 import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Server;
-import org.eclipse.jetty.server.nio.SelectChannelConnector;
+import org.eclipse.jetty.server.nio.InheritedChannelConnector;
 import org.eclipse.jetty.util.thread.QueuedThreadPool;
 import org.eclipse.jetty.webapp.WebAppContext;
 
@@ -35,7 +35,7 @@ public class EmbeddedJettyServer {
 			server.setThreadPool(threadPool);
 
 			// Ensure using the non-blocking connector (NIO)
-			Connector connector = new SelectChannelConnector();
+			Connector connector = new InheritedChannelConnector();
 			connector.setPort(port);
 			connector.setMaxIdleTime(connectorIdleTime);
 			server.setConnectors(new Connector[] { connector });
@@ -45,10 +45,10 @@ public class EmbeddedJettyServer {
 			URL location = domain.getCodeSource().getLocation();
 
 			WebAppContext webapp = new WebAppContext();
+			webapp.setServer(server);
 			webapp.setContextPath("/");
 			webapp.setDescriptor(location.toExternalForm() + "/WEB-INF/web.xml");
 			webapp.setResourceBase("src/main/webapp");
-			webapp.setServer(server);
 			webapp.setWar(location.toExternalForm());
 
 			server.setHandler(webapp);
@@ -56,6 +56,7 @@ public class EmbeddedJettyServer {
 			server.join();
 		} catch (Exception e) {
 			LOGGER.fatal("Server will stop : an unexpected exception  occured", e);
+			System.exit(100);
 		}
 	}
 }
