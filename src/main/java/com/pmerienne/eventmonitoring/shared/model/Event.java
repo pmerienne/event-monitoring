@@ -9,6 +9,11 @@ public class Event implements Serializable {
 
 	private static final long serialVersionUID = -645295179948901126L;
 
+	public final static String DATE_FIELD = "date";
+	public final static String TYPE_FIELD = "type";
+	public final static String ID_FIELD = "_id";
+	public final static String DATA_PREFIX = "data";
+
 	private String id;
 
 	private String type;

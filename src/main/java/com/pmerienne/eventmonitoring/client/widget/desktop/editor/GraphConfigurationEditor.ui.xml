@@ -1,0 +1,59 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:e="urn:import:com.pmerienne.eventmonitoring.client.widget.desktop.editor">
+	<ui:style>
+		.panel {
+			 -moz-border-radius: 20px;
+		    -webkit-border-radius: 20px;
+		    -khtml-border-radius: 20px;
+		    border-radius: 20px;
+			background-color: #EAEAEA;
+		}
+		
+		.header {
+			 -moz-border-radius: 20px 20px 0px 0px;
+		    -webkit-border-radius: 20px 20px 0px 0px;
+		    -khtml-border-radius: 20px 20px 0px 0px;
+		    border-radius: 20px 20px 0px 0px;
+			background-color: #DEDEDE;
+			height: 30px;
+		}
+		
+		.padded {
+			padding: 8px;
+		}
+		
+	</ui:style>
+	<g:HTMLPanel addStyleNames="{style.panel}">
+		<div class="{style.header} {style.padded}">
+			<g:Button ui:field="removeButton" addStyleNames="pull-right btn">
+				<i class="icon-minus"/>
+				Remove
+			</g:Button>
+			<h3 ui:field="graphTitle">New graph</h3>
+		</div>
+		<form class="form-horizontal {style.padded}">
+			<fieldset>
+				<g:HorizontalPanel>
+					<g:HTMLPanel>
+						<e:TextInput ui:field="nameInput" label="Name" required="true" />
+					</g:HTMLPanel>
+
+					<g:HTMLPanel>
+						<e:TimeRangeInput ui:field="timeRangeInput"/>
+						<e:NumberInput ui:field="intervalInput" label="Data interval (ms)" required="true" />
+					</g:HTMLPanel>
+				</g:HorizontalPanel>
+
+				<hr />
+
+				<g:HTMLPanel ui:field="seriesContainer"/>
+				
+				<g:Button ui:field="addTimeSerieButton" addStyleNames="btn">
+					<i class="icon-plus"/>
+					Add time serie
+				</g:Button>
+			</fieldset>
+		</form>
+	</g:HTMLPanel>
+</ui:UiBinder> 

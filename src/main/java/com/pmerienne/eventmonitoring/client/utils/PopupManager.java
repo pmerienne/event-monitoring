@@ -10,9 +10,9 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Widget;
-import com.pmerienne.eventmonitoring.client.widget.popup.ConfirmPopupCallback;
-import com.pmerienne.eventmonitoring.client.widget.popup.Popup;
-import com.pmerienne.eventmonitoring.client.widget.popup.PopupCallback;
+import com.pmerienne.eventmonitoring.client.widget.desktop.popup.ConfirmPopupCallback;
+import com.pmerienne.eventmonitoring.client.widget.desktop.popup.Popup;
+import com.pmerienne.eventmonitoring.client.widget.desktop.popup.PopupCallback;
 
 public class PopupManager {
 

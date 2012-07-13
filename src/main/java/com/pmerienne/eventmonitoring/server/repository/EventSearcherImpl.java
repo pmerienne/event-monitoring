@@ -85,10 +85,13 @@ public class EventSearcherImpl implements EventSearcher {
 			Long totalCount = this.mongoTemplate.count(query, Event.class);
 			searchResults.setTotalCount(totalCount);
 		}
+
 		// Sort
-		for (SortedField sortedField : request.getSortedFields()) {
-			Order order = sortedField.isAscending() ? Order.ASCENDING : Order.DESCENDING;
-			query.sort().on(sortedField.getField(), order);
+		if (request.getSortedFields() != null) {
+			for (SortedField sortedField : request.getSortedFields()) {
+				Order order = sortedField.isAscending() ? Order.ASCENDING : Order.DESCENDING;
+				query.sort().on(sortedField.getField(), order);
+			}
 		}
 
 		// Start and end index

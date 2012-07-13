@@ -52,6 +52,11 @@ public class EventServiceImpl implements EventService {
 		PieResults results = this.eventSearcher.search(request);
 		return results;
 	}
+	
+	public TimeSerieResults searchCached(TimeSerieRequest request) {
+		
+		return null;
+	}
 
 	@Async
 	@Override
@@ -62,7 +67,7 @@ public class EventServiceImpl implements EventService {
 	@Scheduled(fixedRate = 1000)
 	public void addRandomEvents() {
 		Random random = new Random();
-		for (int i = 0; i < 1000; i++) {
+		for (int i = 0; i < 50; i++) {
 			Date startDate = new Date(new Date().getTime() - random.nextInt(10000));
 			Date endDate = new Date(startDate.getTime() + random.nextInt(2000));
 			Date eventDate = new Date(endDate.getTime() + random.nextInt(500));

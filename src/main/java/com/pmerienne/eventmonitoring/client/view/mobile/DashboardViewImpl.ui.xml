@@ -1,0 +1,29 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:mgwt="urn:import:com.googlecode.mgwt.ui.client.widget" xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:l="urn:import:com.pmerienne.eventmonitoring.client.widget.mobile.list">
+	<ui:style>
+		
+	</ui:style>
+	<mgwt:LayoutPanel>
+		<mgwt:HeaderPanel>
+			<mgwt:left>
+				<mgwt:HeaderButton ui:field="listButton" text="List" backButton="true" />
+			</mgwt:left>
+
+			<mgwt:center>
+				<g:HTML ui:field="pageTitle" />
+			</mgwt:center>
+		</mgwt:HeaderPanel>
+
+		<mgwt:ScrollPanel ui:field="scrollPanel">
+			<g:HTMLPanel>
+				<g:HTML ui:field="dashboardDescription" />
+
+				<br />
+
+				<l:TimeSerieList ui:field="timeSerieList" round="true" />
+				<l:PieChartList ui:field="pieChartList" round="true" />
+				<l:EventTableList ui:field="eventTableList" round="true" />
+			</g:HTMLPanel>
+		</mgwt:ScrollPanel>
+	</mgwt:LayoutPanel>
+</ui:UiBinder> 
